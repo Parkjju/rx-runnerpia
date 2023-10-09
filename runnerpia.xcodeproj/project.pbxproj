@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D9292AC3F50E00015407 /* AppDelegate.swift */; };
-		C947D92C2AC3F50E00015407 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D92B2AC3F50E00015407 /* SceneDelegate.swift */; };
 		C947D92E2AC3F50E00015407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D92D2AC3F50E00015407 /* ViewController.swift */; };
-		C947D9312AC3F50E00015407 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C947D92F2AC3F50E00015407 /* Main.storyboard */; };
 		C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C947D9322AC3F50E00015407 /* runnerpia.xcdatamodeld */; };
 		C947D9362AC3F51000015407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C947D9352AC3F51000015407 /* Assets.xcassets */; };
 		C947D9392AC3F51000015407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C947D9372AC3F51000015407 /* LaunchScreen.storyboard */; };
@@ -39,9 +37,7 @@
 /* Begin PBXFileReference section */
 		C947D9262AC3F50E00015407 /* runnerpia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runnerpia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C947D9292AC3F50E00015407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C947D92B2AC3F50E00015407 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C947D92D2AC3F50E00015407 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C947D9302AC3F50E00015407 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C947D9332AC3F50E00015407 /* runnerpia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = runnerpia.xcdatamodel; sourceTree = "<group>"; };
 		C947D9352AC3F51000015407 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C947D9382AC3F51000015407 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,6 +74,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88E172442AD386F800A4A852 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		88E172452AD3870100A4A852 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C947D9292AC3F50E00015407 /* AppDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		88E172462AD390C300A4A852 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		88E172472AD390CC00A4A852 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		88E172482AD390D100A4A852 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		88E172492AD390E200A4A852 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C947D9322AC3F50E00015407 /* runnerpia.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88E1724A2AD390EE00A4A852 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		88E1724B2AD390FD00A4A852 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		88E1724C2AD3910F00A4A852 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C947D9352AC3F51000015407 /* Assets.xcassets */,
+				C947D93A2AC3F51000015407 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C947D91D2AC3F50E00015407 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +164,17 @@
 		C947D9282AC3F50E00015407 /* runnerpia */ = {
 			isa = PBXGroup;
 			children = (
-				C947D9292AC3F50E00015407 /* AppDelegate.swift */,
-				C947D92B2AC3F50E00015407 /* SceneDelegate.swift */,
+				88E172442AD386F800A4A852 /* Application */,
+				88E172452AD3870100A4A852 /* Common */,
+				88E172462AD390C300A4A852 /* Configs */,
+				88E172472AD390CC00A4A852 /* Extensions */,
+				88E172482AD390D100A4A852 /* Managers */,
+				88E172492AD390E200A4A852 /* Models */,
+				88E1724A2AD390EE00A4A852 /* Modules */,
+				88E1724B2AD390FD00A4A852 /* Networking */,
+				88E1724C2AD3910F00A4A852 /* Resources */,
 				C947D92D2AC3F50E00015407 /* ViewController.swift */,
-				C947D92F2AC3F50E00015407 /* Main.storyboard */,
-				C947D9352AC3F51000015407 /* Assets.xcassets */,
 				C947D9372AC3F51000015407 /* LaunchScreen.storyboard */,
-				C947D93A2AC3F51000015407 /* Info.plist */,
-				C947D9322AC3F50E00015407 /* runnerpia.xcdatamodeld */,
 			);
 			path = runnerpia;
 			sourceTree = "<group>";
@@ -236,7 +302,6 @@
 			files = (
 				C947D9392AC3F51000015407 /* LaunchScreen.storyboard in Resources */,
 				C947D9362AC3F51000015407 /* Assets.xcassets in Resources */,
-				C947D9312AC3F50E00015407 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +329,6 @@
 				C947D92E2AC3F50E00015407 /* ViewController.swift in Sources */,
 				C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */,
 				C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */,
-				C947D92C2AC3F50E00015407 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +365,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C947D92F2AC3F50E00015407 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C947D9302AC3F50E00015407 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C947D9372AC3F51000015407 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -443,10 +499,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5JQS3FU5R6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = runnerpia/Info.plist;
+				INFOPLIST_FILE = runnerpia/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,10 +529,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5JQS3FU5R6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = runnerpia/Info.plist;
+				INFOPLIST_FILE = runnerpia/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
