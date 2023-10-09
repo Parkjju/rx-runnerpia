@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88E1724E2AD3A8A900A4A852 /* MainViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1724D2AD3A8A900A4A852 /* MainViewManager.swift */; };
+		88E172512AD3A8FD00A4A852 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E172502AD3A8FD00A4A852 /* TabBarController.swift */; };
 		C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D9292AC3F50E00015407 /* AppDelegate.swift */; };
 		C947D92E2AC3F50E00015407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D92D2AC3F50E00015407 /* ViewController.swift */; };
 		C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C947D9322AC3F50E00015407 /* runnerpia.xcdatamodeld */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88E1724D2AD3A8A900A4A852 /* MainViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewManager.swift; sourceTree = "<group>"; };
+		88E172502AD3A8FD00A4A852 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C947D9262AC3F50E00015407 /* runnerpia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runnerpia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C947D9292AC3F50E00015407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C947D92D2AC3F50E00015407 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 		88E172442AD386F800A4A852 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				C947D9292AC3F50E00015407 /* AppDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -84,7 +89,7 @@
 		88E172452AD3870100A4A852 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				C947D9292AC3F50E00015407 /* AppDelegate.swift */,
+				88E1724F2AD3A8D500A4A852 /* TabBar */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 		88E172482AD390D100A4A852 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				88E1724D2AD3A8A900A4A852 /* MainViewManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -139,6 +145,14 @@
 				C947D93A2AC3F51000015407 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		88E1724F2AD3A8D500A4A852 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				88E172502AD3A8FD00A4A852 /* TabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		C947D91D2AC3F50E00015407 = {
@@ -329,6 +343,8 @@
 				C947D92E2AC3F50E00015407 /* ViewController.swift in Sources */,
 				C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */,
 				C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */,
+				88E172512AD3A8FD00A4A852 /* TabBarController.swift in Sources */,
+				88E1724E2AD3A8A900A4A852 /* MainViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
