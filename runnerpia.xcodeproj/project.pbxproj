@@ -21,6 +21,7 @@
 		C941F5172AD52CF500F43668 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5162AD52CF500F43668 /* AppCoordinator.swift */; };
 		C941F5192AD532AE00F43668 /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5182AD532AE00F43668 /* ImageLiteral.swift */; };
 		C941F51B2AD5334E00F43668 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F51A2AD5334E00F43668 /* UIImage+.swift */; };
+		C941F5202AD5393B00F43668 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F51F2AD5393B00F43668 /* UIColor+.swift */; };
 		C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D9292AC3F50E00015407 /* AppDelegate.swift */; };
 		C947D92E2AC3F50E00015407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D92D2AC3F50E00015407 /* ViewController.swift */; };
 		C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C947D9322AC3F50E00015407 /* runnerpia.xcdatamodeld */; };
@@ -58,6 +59,7 @@
 		C941F5162AD52CF500F43668 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C941F5182AD532AE00F43668 /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 		C941F51A2AD5334E00F43668 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+.swift"; path = "runnerpia/Extensions/UIImage/UIImage+.swift"; sourceTree = SOURCE_ROOT; };
+		C941F51F2AD5393B00F43668 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		C947D9262AC3F50E00015407 /* runnerpia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runnerpia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C947D9292AC3F50E00015407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C947D92D2AC3F50E00015407 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		88E172472AD390CC00A4A852 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C941F51E2AD5392E00F43668 /* UIColor */,
 				C941F51D2AD5337400F43668 /* UIImage */,
 			);
 			path = Extensions;
@@ -217,6 +220,14 @@
 				C941F51A2AD5334E00F43668 /* UIImage+.swift */,
 			);
 			path = UIImage;
+			sourceTree = "<group>";
+		};
+		C941F51E2AD5392E00F43668 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				C941F51F2AD5393B00F43668 /* UIColor+.swift */,
+			);
+			path = UIColor;
 			sourceTree = "<group>";
 		};
 		C947D91D2AC3F50E00015407 = {
@@ -424,6 +435,7 @@
 				C941F5082AD5284200F43668 /* BaseViewModel.swift in Sources */,
 				88E172512AD3A8FD00A4A852 /* TabBarController.swift in Sources */,
 				C941F51B2AD5334E00F43668 /* UIImage+.swift in Sources */,
+				C941F5202AD5393B00F43668 /* UIColor+.swift in Sources */,
 				C941F5152AD52B3900F43668 /* RouteDetailViewController.swift in Sources */,
 				C941F5062AD5275100F43668 /* BaseViewController.swift in Sources */,
 			);
