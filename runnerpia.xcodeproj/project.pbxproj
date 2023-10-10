@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4362D07183356856F2C6EAC7 /* Pods_runnerpia_runnerpiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB93D157928B36F4954C03D /* Pods_runnerpia_runnerpiaUITests.framework */; };
+		79E0E4A028CCB0907A744709 /* Pods_runnerpia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA27F1A7812707DC189EA24 /* Pods_runnerpia.framework */; };
 		88E172512AD3A8FD00A4A852 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E172502AD3A8FD00A4A852 /* TabBarController.swift */; };
 		88E172542AD5542800A4A852 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E172532AD5542800A4A852 /* MyPageViewController.swift */; };
-		88E172572AD5576C00A4A852 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 88E172562AD5576C00A4A852 /* Then */; };
 		88E172582AD5588F00A4A852 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C941F52A2AD53DDA00F43668 /* Pretendard-Black.otf */; };
 		88E172592AD5588F00A4A852 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C941F5292AD53DDA00F43668 /* Pretendard-Bold.otf */; };
 		88E1725A2AD5588F00A4A852 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C941F52B2AD53DDA00F43668 /* Pretendard-ExtraBold.otf */; };
@@ -25,11 +26,9 @@
 		88E1726D2AD5737300A4A852 /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1726C2AD5737300A4A852 /* MainRoute.swift */; };
 		88E1726F2AD5739900A4A852 /* FollowingRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1726E2AD5739900A4A852 /* FollowingRoute.swift */; };
 		88E172722AD5745900A4A852 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E172712AD5745900A4A852 /* Tags.swift */; };
-		C941F4EE2AD525D800F43668 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C941F4ED2AD525D800F43668 /* SnapKit */; };
-		C941F4F12AD5261900F43668 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = C941F4F02AD5261900F43668 /* RxBlocking */; };
-		C941F4F52AD5261900F43668 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C941F4F42AD5261900F43668 /* RxCocoa */; };
-		C941F4F92AD5261900F43668 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C941F4F82AD5261900F43668 /* RxRelay */; };
-		C941F4FD2AD5261900F43668 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C941F4FC2AD5261900F43668 /* RxSwift */; };
+		88E172752AD586A800A4A852 /* RouteRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E172742AD586A800A4A852 /* RouteRunningViewController.swift */; };
+		88FA2B9D2AD58DA900AE835B /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA2B9C2AD58DA900AE835B /* APIRouter.swift */; };
+		B21AB5A3563F4194B48466C3 /* Pods_runnerpiaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40C91CFC823BA5CC4E04C62 /* Pods_runnerpiaTests.framework */; };
 		C941F5062AD5275100F43668 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5052AD5275100F43668 /* BaseViewController.swift */; };
 		C941F5082AD5284200F43668 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5072AD5284200F43668 /* BaseViewModel.swift */; };
 		C941F50C2AD529B300F43668 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F50B2AD529B300F43668 /* HomeViewController.swift */; };
@@ -67,6 +66,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		387C8AB4255175EDAED1A4F1 /* Pods-runnerpia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-runnerpia.release.xcconfig"; path = "Target Support Files/Pods-runnerpia/Pods-runnerpia.release.xcconfig"; sourceTree = "<group>"; };
+		3B528E7554C6A04F1A2FB6F3 /* Pods-runnerpia-runnerpiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-runnerpia-runnerpiaUITests.release.xcconfig"; path = "Target Support Files/Pods-runnerpia-runnerpiaUITests/Pods-runnerpia-runnerpiaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5862D0E785A20B3FF5DD925F /* Pods-runnerpiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-runnerpiaTests.debug.xcconfig"; path = "Target Support Files/Pods-runnerpiaTests/Pods-runnerpiaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		88E172502AD3A8FD00A4A852 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		88E172532AD5542800A4A852 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		88E172642AD55D0900A4A852 /* RecommendContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendContentsView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,11 @@
 		88E1726C2AD5737300A4A852 /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
 		88E1726E2AD5739900A4A852 /* FollowingRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingRoute.swift; sourceTree = "<group>"; };
 		88E172712AD5745900A4A852 /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
+		88E172742AD586A800A4A852 /* RouteRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRunningViewController.swift; sourceTree = "<group>"; };
+		88FA2B9B2AD58DA000AE835B /* runnerpia.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = runnerpia.xcconfig; sourceTree = "<group>"; };
+		88FA2B9C2AD58DA900AE835B /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		8EA27F1A7812707DC189EA24 /* Pods_runnerpia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_runnerpia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99C878A5D0F16BA11209C565 /* Pods-runnerpia-runnerpiaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-runnerpia-runnerpiaUITests.debug.xcconfig"; path = "Target Support Files/Pods-runnerpia-runnerpiaUITests/Pods-runnerpia-runnerpiaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C941F5052AD5275100F43668 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C941F5072AD5284200F43668 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		C941F50B2AD529B300F43668 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +112,10 @@
 		C947D9492AC3F51000015407 /* runnerpiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = runnerpiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C947D94D2AC3F51000015407 /* runnerpiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = runnerpiaUITests.swift; sourceTree = "<group>"; };
 		C947D94F2AC3F51000015407 /* runnerpiaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = runnerpiaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DFAC9708167AF2D6543FBE25 /* Pods-runnerpiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-runnerpiaTests.release.xcconfig"; path = "Target Support Files/Pods-runnerpiaTests/Pods-runnerpiaTests.release.xcconfig"; sourceTree = "<group>"; };
+		E40C91CFC823BA5CC4E04C62 /* Pods_runnerpiaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_runnerpiaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC8D8280FC147B0866BE7A6C /* Pods-runnerpia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-runnerpia.debug.xcconfig"; path = "Target Support Files/Pods-runnerpia/Pods-runnerpia.debug.xcconfig"; sourceTree = "<group>"; };
+		EDB93D157928B36F4954C03D /* Pods_runnerpia_runnerpiaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_runnerpia_runnerpiaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C941F4F92AD5261900F43668 /* RxRelay in Frameworks */,
-				88E172572AD5576C00A4A852 /* Then in Frameworks */,
-				C941F4EE2AD525D800F43668 /* SnapKit in Frameworks */,
-				C941F4F52AD5261900F43668 /* RxCocoa in Frameworks */,
-				C941F4FD2AD5261900F43668 /* RxSwift in Frameworks */,
-				C941F4F12AD5261900F43668 /* RxBlocking in Frameworks */,
+				79E0E4A028CCB0907A744709 /* Pods_runnerpia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21AB5A3563F4194B48466C3 /* Pods_runnerpiaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,12 +139,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4362D07183356856F2C6EAC7 /* Pods_runnerpia_runnerpiaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E2292F59C8332E123B0BA89 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC8D8280FC147B0866BE7A6C /* Pods-runnerpia.debug.xcconfig */,
+				387C8AB4255175EDAED1A4F1 /* Pods-runnerpia.release.xcconfig */,
+				99C878A5D0F16BA11209C565 /* Pods-runnerpia-runnerpiaUITests.debug.xcconfig */,
+				3B528E7554C6A04F1A2FB6F3 /* Pods-runnerpia-runnerpiaUITests.release.xcconfig */,
+				5862D0E785A20B3FF5DD925F /* Pods-runnerpiaTests.debug.xcconfig */,
+				DFAC9708167AF2D6543FBE25 /* Pods-runnerpiaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5E4758F07042A7D3239422AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8EA27F1A7812707DC189EA24 /* Pods_runnerpia.framework */,
+				EDB93D157928B36F4954C03D /* Pods_runnerpia_runnerpiaUITests.framework */,
+				E40C91CFC823BA5CC4E04C62 /* Pods_runnerpiaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		88E172442AD386F800A4A852 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +190,7 @@
 		88E172462AD390C300A4A852 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				88FA2B9B2AD58DA000AE835B /* runnerpia.xcconfig */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -187,6 +219,7 @@
 		88E1724A2AD390EE00A4A852 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				88E172732AD5868000A4A852 /* RouteRunning */,
 				C941F5092AD5291800F43668 /* Main */,
 				C941F50A2AD5298000F43668 /* Home */,
 				C941F50E2AD52AE200F43668 /* RouteFollowing */,
@@ -199,6 +232,7 @@
 		88E1724B2AD390FD00A4A852 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				88FA2B9C2AD58DA900AE835B /* APIRouter.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -245,6 +279,14 @@
 				88E172712AD5745900A4A852 /* Tags.swift */,
 			);
 			path = Tags;
+			sourceTree = "<group>";
+		};
+		88E172732AD5868000A4A852 /* RouteRunning */ = {
+			isa = PBXGroup;
+			children = (
+				88E172742AD586A800A4A852 /* RouteRunningViewController.swift */,
+			);
+			path = RouteRunning;
 			sourceTree = "<group>";
 		};
 		C941F5042AD5274600F43668 /* Base */ = {
@@ -336,6 +378,8 @@
 				C947D9422AC3F51000015407 /* runnerpiaTests */,
 				C947D94C2AC3F51000015407 /* runnerpiaUITests */,
 				C947D9272AC3F50E00015407 /* Products */,
+				1E2292F59C8332E123B0BA89 /* Pods */,
+				5E4758F07042A7D3239422AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -389,23 +433,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C947D9532AC3F51000015407 /* Build configuration list for PBXNativeTarget "runnerpia" */;
 			buildPhases = (
+				B75659F0A6128CEC9FC7396E /* [CP] Check Pods Manifest.lock */,
 				C947D9222AC3F50E00015407 /* Sources */,
 				C947D9232AC3F50E00015407 /* Frameworks */,
 				C947D9242AC3F50E00015407 /* Resources */,
+				B2F4EF4D42A488D8EF72228B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = runnerpia;
-			packageProductDependencies = (
-				C941F4ED2AD525D800F43668 /* SnapKit */,
-				C941F4F02AD5261900F43668 /* RxBlocking */,
-				C941F4F42AD5261900F43668 /* RxCocoa */,
-				C941F4F82AD5261900F43668 /* RxRelay */,
-				C941F4FC2AD5261900F43668 /* RxSwift */,
-				88E172562AD5576C00A4A852 /* Then */,
-			);
 			productName = runnerpia;
 			productReference = C947D9262AC3F50E00015407 /* runnerpia.app */;
 			productType = "com.apple.product-type.application";
@@ -414,9 +452,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C947D9562AC3F51000015407 /* Build configuration list for PBXNativeTarget "runnerpiaTests" */;
 			buildPhases = (
+				131D61C23D5EB93C8456846A /* [CP] Check Pods Manifest.lock */,
 				C947D93B2AC3F51000015407 /* Sources */,
 				C947D93C2AC3F51000015407 /* Frameworks */,
 				C947D93D2AC3F51000015407 /* Resources */,
+				C7C2277E98BB66BD94EA3424 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -432,9 +472,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C947D9592AC3F51000015407 /* Build configuration list for PBXNativeTarget "runnerpiaUITests" */;
 			buildPhases = (
+				0ECF63C735F25A8DD39D4478 /* [CP] Check Pods Manifest.lock */,
 				C947D9452AC3F51000015407 /* Sources */,
 				C947D9462AC3F51000015407 /* Frameworks */,
 				C947D9472AC3F51000015407 /* Resources */,
+				6981EC6F5D684DEE2ED2560F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -478,11 +520,6 @@
 				Base,
 			);
 			mainGroup = C947D91D2AC3F50E00015407;
-			packageReferences = (
-				C941F4EC2AD525D800F43668 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				C941F4EF2AD5261900F43668 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				88E172552AD5576C00A4A852 /* XCRemoteSwiftPackageReference "Then" */,
-			);
 			productRefGroup = C947D9272AC3F50E00015407 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -529,6 +566,126 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0ECF63C735F25A8DD39D4478 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-runnerpia-runnerpiaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		131D61C23D5EB93C8456846A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-runnerpiaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6981EC6F5D684DEE2ED2560F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-runnerpia-runnerpiaUITests/Pods-runnerpia-runnerpiaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-runnerpia-runnerpiaUITests/Pods-runnerpia-runnerpiaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-runnerpia-runnerpiaUITests/Pods-runnerpia-runnerpiaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2F4EF4D42A488D8EF72228B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-runnerpia/Pods-runnerpia-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-runnerpia/Pods-runnerpia-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-runnerpia/Pods-runnerpia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B75659F0A6128CEC9FC7396E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-runnerpia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7C2277E98BB66BD94EA3424 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-runnerpiaTests/Pods-runnerpiaTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-runnerpiaTests/Pods-runnerpiaTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-runnerpiaTests/Pods-runnerpiaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C947D9222AC3F50E00015407 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -541,8 +698,10 @@
 				C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */,
 				C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */,
 				C941F50C2AD529B300F43668 /* HomeViewController.swift in Sources */,
+				88FA2B9D2AD58DA900AE835B /* APIRouter.swift in Sources */,
 				C941F5082AD5284200F43668 /* BaseViewModel.swift in Sources */,
 				88E172722AD5745900A4A852 /* Tags.swift in Sources */,
+				88E172752AD586A800A4A852 /* RouteRunningViewController.swift in Sources */,
 				88E172512AD3A8FD00A4A852 /* TabBarController.swift in Sources */,
 				88E172682AD55E2300A4A852 /* UIView+.swift in Sources */,
 				88E1726D2AD5737300A4A852 /* MainRoute.swift in Sources */,
@@ -717,6 +876,7 @@
 		};
 		C947D9542AC3F51000015407 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC8D8280FC147B0866BE7A6C /* Pods-runnerpia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -747,6 +907,7 @@
 		};
 		C947D9552AC3F51000015407 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 387C8AB4255175EDAED1A4F1 /* Pods-runnerpia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -777,6 +938,7 @@
 		};
 		C947D9572AC3F51000015407 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5862D0E785A20B3FF5DD925F /* Pods-runnerpiaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -797,6 +959,7 @@
 		};
 		C947D9582AC3F51000015407 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFAC9708167AF2D6543FBE25 /* Pods-runnerpiaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -817,6 +980,7 @@
 		};
 		C947D95A2AC3F51000015407 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99C878A5D0F16BA11209C565 /* Pods-runnerpia-runnerpiaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -835,6 +999,7 @@
 		};
 		C947D95B2AC3F51000015407 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B528E7554C6A04F1A2FB6F3 /* Pods-runnerpia-runnerpiaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -891,66 +1056,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		88E172552AD5576C00A4A852 /* XCRemoteSwiftPackageReference "Then" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/Then.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		C941F4EC2AD525D800F43668 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		C941F4EF2AD5261900F43668 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		88E172562AD5576C00A4A852 /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 88E172552AD5576C00A4A852 /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
-		};
-		C941F4ED2AD525D800F43668 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C941F4EC2AD525D800F43668 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		C941F4F02AD5261900F43668 /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C941F4EF2AD5261900F43668 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
-		C941F4F42AD5261900F43668 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C941F4EF2AD5261900F43668 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		C941F4F82AD5261900F43668 /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C941F4EF2AD5261900F43668 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		C941F4FC2AD5261900F43668 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C941F4EF2AD5261900F43668 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C947D9322AC3F50E00015407 /* runnerpia.xcdatamodeld */ = {
