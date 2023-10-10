@@ -8,5 +8,13 @@
 import UIKit
 
 class RouteFollowingViewController: BaseViewController {
+    // MARK: - Subviews
     
+    // MARK: - Properties
+    
+    // MARK: - Functions
+    
+    override func configUI() {
+        view.backgroundColor = .grey200
+    }
 }
