@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "imgLogoutLine.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
