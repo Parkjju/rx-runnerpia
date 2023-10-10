@@ -40,13 +40,13 @@ class AppCoordinator: Coordinator {
         tabBarViewController.tabBar.tintColor = .black
 
         guard let items = tabBarViewController.tabBar.items else { return UITabBarController() }
-        items[0].image = UIImage(named: "route")
-        items[0].selectedImage = UIImage(named: "route")?.withRenderingMode(.alwaysOriginal)
+        items[0].image = ImageLiteral.imgFollowRoute
+        items[0].selectedImage = ImageLiteral.imgFollowRoute.withRenderingMode(.alwaysOriginal)
         items[0].title = "경로 따라가기"
-        items[1].image = UIImage(named: "homeButton")
-        items[1].selectedImage = UIImage(named: "homeButton")?.withRenderingMode(.alwaysOriginal)
-        items[2].image = UIImage(named: "myPage")
-        items[2].selectedImage = UIImage(named: "myPage")?.withRenderingMode(.alwaysOriginal)
+        items[1].image = ImageLiteral.imgHome
+        items[1].selectedImage = ImageLiteral.imgHome.withRenderingMode(.alwaysOriginal)
+        items[2].image = ImageLiteral.imgMyPage
+        items[2].selectedImage = ImageLiteral.imgMyPage.withRenderingMode(.alwaysOriginal)
         items[2].title = "마이"
 
 
