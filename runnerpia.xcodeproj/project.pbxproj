@@ -22,6 +22,9 @@
 		88E172652AD55D0900A4A852 /* RecommendContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E172642AD55D0900A4A852 /* RecommendContentsView.swift */; };
 		88E172682AD55E2300A4A852 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E172672AD55E2300A4A852 /* UIView+.swift */; };
 		88E1726B2AD5624D00A4A852 /* SafeTagContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1726A2AD5624D00A4A852 /* SafeTagContentsView.swift */; };
+		88E1726D2AD5737300A4A852 /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1726C2AD5737300A4A852 /* MainRoute.swift */; };
+		88E1726F2AD5739900A4A852 /* FollowingRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1726E2AD5739900A4A852 /* FollowingRoute.swift */; };
+		88E172722AD5745900A4A852 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E172712AD5745900A4A852 /* Tags.swift */; };
 		C941F4EE2AD525D800F43668 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C941F4ED2AD525D800F43668 /* SnapKit */; };
 		C941F4F12AD5261900F43668 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = C941F4F02AD5261900F43668 /* RxBlocking */; };
 		C941F4F52AD5261900F43668 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C941F4F42AD5261900F43668 /* RxCocoa */; };
@@ -69,6 +72,9 @@
 		88E172642AD55D0900A4A852 /* RecommendContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendContentsView.swift; sourceTree = "<group>"; };
 		88E172672AD55E2300A4A852 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		88E1726A2AD5624D00A4A852 /* SafeTagContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeTagContentsView.swift; sourceTree = "<group>"; };
+		88E1726C2AD5737300A4A852 /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
+		88E1726E2AD5739900A4A852 /* FollowingRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingRoute.swift; sourceTree = "<group>"; };
+		88E172712AD5745900A4A852 /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		C941F5052AD5275100F43668 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C941F5072AD5284200F43668 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		C941F50B2AD529B300F43668 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 		88E172452AD3870100A4A852 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				88E172702AD5745200A4A852 /* Tags */,
 				C941F5042AD5274600F43668 /* Base */,
 			);
 			path = Common;
@@ -171,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				C947D9322AC3F50E00015407 /* runnerpia.xcdatamodeld */,
+				88E1726C2AD5737300A4A852 /* MainRoute.swift */,
+				88E1726E2AD5739900A4A852 /* FollowingRoute.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -228,6 +237,14 @@
 				88E1726A2AD5624D00A4A852 /* SafeTagContentsView.swift */,
 			);
 			path = HomeSubviews;
+			sourceTree = "<group>";
+		};
+		88E172702AD5745200A4A852 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				88E172712AD5745900A4A852 /* Tags.swift */,
+			);
+			path = Tags;
 			sourceTree = "<group>";
 		};
 		C941F5042AD5274600F43668 /* Base */ = {
@@ -525,9 +542,12 @@
 				C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */,
 				C941F50C2AD529B300F43668 /* HomeViewController.swift in Sources */,
 				C941F5082AD5284200F43668 /* BaseViewModel.swift in Sources */,
+				88E172722AD5745900A4A852 /* Tags.swift in Sources */,
 				88E172512AD3A8FD00A4A852 /* TabBarController.swift in Sources */,
 				88E172682AD55E2300A4A852 /* UIView+.swift in Sources */,
+				88E1726D2AD5737300A4A852 /* MainRoute.swift in Sources */,
 				88E172652AD55D0900A4A852 /* RecommendContentsView.swift in Sources */,
+				88E1726F2AD5739900A4A852 /* FollowingRoute.swift in Sources */,
 				C941F51B2AD5334E00F43668 /* UIImage+.swift in Sources */,
 				88E172542AD5542800A4A852 /* MyPageViewController.swift in Sources */,
 				C941F5232AD53D8100F43668 /* UIFont+.swift in Sources */,
