@@ -22,6 +22,9 @@
 		C941F5032AD5261900F43668 /* RxTest-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = C941F5022AD5261900F43668 /* RxTest-Dynamic */; };
 		C941F5062AD5275100F43668 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5052AD5275100F43668 /* BaseViewController.swift */; };
 		C941F5082AD5284200F43668 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5072AD5284200F43668 /* BaseViewModel.swift */; };
+		C941F50C2AD529B300F43668 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F50B2AD529B300F43668 /* HomeViewController.swift */; };
+		C941F5102AD52AF300F43668 /* RouteFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F50F2AD52AF300F43668 /* RouteFollowingViewController.swift */; };
+		C941F5152AD52B3900F43668 /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5142AD52B3900F43668 /* RouteDetailViewController.swift */; };
 		C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D9292AC3F50E00015407 /* AppDelegate.swift */; };
 		C947D92E2AC3F50E00015407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D92D2AC3F50E00015407 /* ViewController.swift */; };
 		C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C947D9322AC3F50E00015407 /* runnerpia.xcdatamodeld */; };
@@ -54,6 +57,9 @@
 		88E172502AD3A8FD00A4A852 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C941F5052AD5275100F43668 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C941F5072AD5284200F43668 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		C941F50B2AD529B300F43668 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C941F50F2AD52AF300F43668 /* RouteFollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFollowingViewController.swift; sourceTree = "<group>"; };
+		C941F5142AD52B3900F43668 /* RouteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailViewController.swift; sourceTree = "<group>"; };
 		C947D9262AC3F50E00015407 /* runnerpia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runnerpia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C947D9292AC3F50E00015407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C947D92D2AC3F50E00015407 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				C941F5042AD5274600F43668 /* Base */,
-				88E1724F2AD3A8D500A4A852 /* TabBar */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -154,6 +159,10 @@
 		88E1724A2AD390EE00A4A852 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C941F5092AD5291800F43668 /* Main */,
+				C941F50A2AD5298000F43668 /* Home */,
+				C941F50E2AD52AE200F43668 /* RouteFollowing */,
+				C941F5132AD52B2200F43668 /* RouteDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -174,14 +183,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		88E1724F2AD3A8D500A4A852 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				88E172502AD3A8FD00A4A852 /* TabBarController.swift */,
-			);
-			path = TabBar;
-			sourceTree = "<group>";
-		};
 		C941F5042AD5274600F43668 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +190,38 @@
 				C941F5072AD5284200F43668 /* BaseViewModel.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		C941F5092AD5291800F43668 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				88E172502AD3A8FD00A4A852 /* TabBarController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C941F50A2AD5298000F43668 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C941F50B2AD529B300F43668 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C941F50E2AD52AE200F43668 /* RouteFollowing */ = {
+			isa = PBXGroup;
+			children = (
+				C941F50F2AD52AF300F43668 /* RouteFollowingViewController.swift */,
+			);
+			path = RouteFollowing;
+			sourceTree = "<group>";
+		};
+		C941F5132AD52B2200F43668 /* RouteDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C941F5142AD52B3900F43668 /* RouteDetailViewController.swift */,
+			);
+			path = RouteDetail;
 			sourceTree = "<group>";
 		};
 		C947D91D2AC3F50E00015407 = {
@@ -393,11 +426,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C941F5102AD52AF300F43668 /* RouteFollowingViewController.swift in Sources */,
 				C947D92E2AC3F50E00015407 /* ViewController.swift in Sources */,
 				C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */,
 				C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */,
+				C941F50C2AD529B300F43668 /* HomeViewController.swift in Sources */,
 				C941F5082AD5284200F43668 /* BaseViewModel.swift in Sources */,
 				88E172512AD3A8FD00A4A852 /* TabBarController.swift in Sources */,
+				C941F5152AD52B3900F43668 /* RouteDetailViewController.swift in Sources */,
 				88E1724E2AD3A8A900A4A852 /* MainViewManager.swift in Sources */,
 				C941F5062AD5275100F43668 /* BaseViewController.swift in Sources */,
 			);
