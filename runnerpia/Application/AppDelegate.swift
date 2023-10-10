@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let window = window else { return false }
         
         let navigationController = UINavigationController()
+        navigationController.isNavigationBarHidden = true
+        
         window.rootViewController = navigationController
         
         let coordinator = AppCoordinator(navigationController: navigationController)
