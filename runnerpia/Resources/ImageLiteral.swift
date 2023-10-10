@@ -21,4 +21,7 @@ enum ImageLiteral {
     static var imgRouteLine: UIImage {.load(named: "imgRouteLine")}
     static var imgTimeLine: UIImage {.load(named: "imgTimeLine")}
     static var imgHome: UIImage {.load(named: "imgHome")}
+    static var imgSearch: UIImage {.load(named: "imgSearch")}
+    static var imgAdd: UIImage {.load(named: "imgAdd")}
+    static var imgRightAngle: UIImage {.load(named: "imgRightAngle")}
 }
