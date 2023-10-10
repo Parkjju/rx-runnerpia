@@ -30,9 +30,9 @@ class AppCoordinator: Coordinator {
     private func setTapBarController() -> UITabBarController {
         let tabBarViewController = TabBarController()
 
-        let vc1 = UINavigationController(rootViewController: ViewController())
-        let vc2 = UINavigationController(rootViewController: ViewController())
-        let vc3 = UINavigationController(rootViewController: ViewController())
+        let vc1 = UINavigationController(rootViewController: RouteFollowingViewController())
+        let vc2 = UINavigationController(rootViewController: HomeViewController())
+        let vc3 = UINavigationController(rootViewController: MyPageViewController())
 
         tabBarViewController.setViewControllers([vc1, vc2, vc3], animated: false)
         tabBarViewController.modalPresentationStyle = .fullScreen
