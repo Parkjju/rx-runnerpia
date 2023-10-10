@@ -48,7 +48,6 @@ class HomeViewController: BaseViewController {
     private let safeTagContentsView = SafeTagContentsView()
     
     // MARK: - Properties
-    private let defaultTabBarHeight = 49
     
     // MARK: - Functions
     override func configUI() {
@@ -59,7 +58,7 @@ class HomeViewController: BaseViewController {
         [appTitle, searchButton, recommendContentsView, recordButton, recordButtonTitle, recordButtonSubLabel, safeTagContentsView].forEach { view.addSubview($0) }
         
         appTitle.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(-defaultTabBarHeight)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.leading.equalTo(view).offset(16)
         }
         
