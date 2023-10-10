@@ -15,7 +15,7 @@ class RouteFollowingViewController: BaseViewController {
     // MARK: - Functions
     
     override func configUI() {
-        self.title = "추천 경로"
+        self.navigationItem.title = "추천 경로"
         view.backgroundColor = .grey200
     }
 }
