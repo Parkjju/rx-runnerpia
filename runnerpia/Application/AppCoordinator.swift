@@ -43,8 +43,8 @@ class AppCoordinator: Coordinator {
         items[0].image = ImageLiteral.imgFollowRoute
         items[0].selectedImage = ImageLiteral.imgFollowRoute.withRenderingMode(.alwaysOriginal)
         items[0].title = "경로 따라가기"
-        items[1].image = ImageLiteral.imgHome
-        items[1].selectedImage = ImageLiteral.imgHome.withRenderingMode(.alwaysOriginal)
+        items[1].image = ImageLiteral.imgHomeButton.resize(to: CGSize(width: 58, height: 58)).withRenderingMode(.alwaysOriginal)
+        items[1].selectedImage = ImageLiteral.imgHomeButton.resize(to: CGSize(width: 58, height: 58)).withRenderingMode(.alwaysOriginal)
         items[2].image = ImageLiteral.imgMyPage
         items[2].selectedImage = ImageLiteral.imgMyPage.withRenderingMode(.alwaysOriginal)
         items[2].title = "마이"
