@@ -26,6 +26,7 @@ class HomeViewController: BaseViewController {
     
     private let recordButton = UIButton(type: .system)
         .then {
+            $0.addTarget(self, action: #selector(recordButtonTapped), for: .touchUpInside)
             $0.setImage(ImageLiteral.imgAdd.resize(to: CGSize(width: 40, height: 40)).withRenderingMode(.alwaysOriginal), for: .normal)
             $0.layer.cornerRadius = 20
             $0.backgroundColor = .blue400
@@ -48,9 +49,11 @@ class HomeViewController: BaseViewController {
     private let safeTagContentsView = SafeTagContentsView()
     
     // MARK: - Properties
+    var coordinator: HomeCoordinator?
     
     // MARK: - Functions
     override func configUI() {
+        self.navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .init(hex: "#F5F5F5")
     }
     
@@ -102,6 +105,6 @@ class HomeViewController: BaseViewController {
     // MARK: - Objc functions
     @objc
     func recordButtonTapped() {
-        print("HI")
+        coordinator?.push(scene: .routeRunning)
     }
 }
