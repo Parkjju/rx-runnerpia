@@ -49,6 +49,7 @@
 		C9449D702AD664F7003F72CF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D6F2AD664F7003F72CF /* HomeViewModel.swift */; };
 		C9449D752AD666A9003F72CF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D742AD666A9003F72CF /* LocationManager.swift */; };
 		C9449D792AD66944003F72CF /* CoreLocation+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D782AD66944003F72CF /* CoreLocation+Rx.swift */; };
+		C9449E042AD68A35003F72CF /* RecordSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449E032AD68A35003F72CF /* RecordSectionView.swift */; };
 		C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D9292AC3F50E00015407 /* AppDelegate.swift */; };
 		C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C947D9322AC3F50E00015407 /* runnerpia.xcdatamodeld */; };
 		C947D9362AC3F51000015407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C947D9352AC3F51000015407 /* Assets.xcassets */; };
@@ -124,6 +125,7 @@
 		C9449D6F2AD664F7003F72CF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C9449D742AD666A9003F72CF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C9449D782AD66944003F72CF /* CoreLocation+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreLocation+Rx.swift"; sourceTree = "<group>"; };
+		C9449E032AD68A35003F72CF /* RecordSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSectionView.swift; sourceTree = "<group>"; };
 		C947D9262AC3F50E00015407 /* runnerpia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runnerpia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C947D9292AC3F50E00015407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C947D9332AC3F50E00015407 /* runnerpia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = runnerpia.xcdatamodel; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 		88E172732AD5868000A4A852 /* RouteRunning */ = {
 			isa = PBXGroup;
 			children = (
+				C9449E022AD689E5003F72CF /* RouteRunningSubviews */,
 				C9449D6D2AD66295003F72CF /* RouteRunningViewModel.swift */,
 				88E172742AD586A800A4A852 /* RouteRunningViewController.swift */,
 			);
@@ -414,6 +417,14 @@
 				C9449D782AD66944003F72CF /* CoreLocation+Rx.swift */,
 			);
 			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		C9449E022AD689E5003F72CF /* RouteRunningSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				C9449E032AD68A35003F72CF /* RecordSectionView.swift */,
+			);
+			path = RouteRunningSubviews;
 			sourceTree = "<group>";
 		};
 		C947D91D2AC3F50E00015407 = {
@@ -739,6 +750,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9449D6C2AD65ED5003F72CF /* RouteFollowingViewModel.swift in Sources */,
+				C9449E042AD68A35003F72CF /* RecordSectionView.swift in Sources */,
 				C941F5172AD52CF500F43668 /* AppCoordinator.swift in Sources */,
 				C9449D792AD66944003F72CF /* CoreLocation+Rx.swift in Sources */,
 				C9449D752AD666A9003F72CF /* LocationManager.swift in Sources */,
