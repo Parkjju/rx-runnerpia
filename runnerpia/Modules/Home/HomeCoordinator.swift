@@ -35,7 +35,7 @@ class HomeCoordinator: Coordinator, HomeFlow {
     func push(scene: HomeFlowScenes) {
         switch scene {
         case .routeRunning:
-            navigationController.pushViewController(RouteRunningViewController(), animated: true)
+            navigationController.pushViewController(RouteRunningViewController(viewModel: RouteRunningViewModel()), animated: true)
         case .runningComplete:
             navigationController.pushViewController(UIViewController(), animated: true)
         case .runningRegister:
