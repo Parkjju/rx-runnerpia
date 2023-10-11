@@ -12,6 +12,8 @@ class RouteFollowingViewController: BaseViewController {
     
     // MARK: - Properties
     
+    // MARK: - Life Cycles
+    
     // MARK: - Functions
     
     override func configUI() {
