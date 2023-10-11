@@ -30,6 +30,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         render()
         configUI()
+        bindViewModel()
     }
     
     func render() {
@@ -38,5 +39,9 @@ class BaseViewController: UIViewController {
     
     func configUI() {
         // View Configuration
+    }
+    
+    func bindViewModel() {
+        // view model binding
     }
 }
