@@ -18,10 +18,11 @@ class RouteRunningViewController: BaseViewController {
     // MARK: - Functions
     
     override func render() {
-        
+        print("ROUTE..")
     }
     
     override func configUI() {
         view.backgroundColor = .white
+        navigationController?.isNavigationBarHidden = false
     }
 }
