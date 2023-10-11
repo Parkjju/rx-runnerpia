@@ -149,7 +149,7 @@ class TabBarCoordinator: NSObject, Coordinator {
                let followRouteVC = RouteFollowingViewController()
                navController.pushViewController(followRouteVC, animated: true)
            case .home:
-               let homeVC = HomeViewController()
+               let homeVC = HomeViewController(viewModel: HomeViewModel())
                homeVC.coordinator = HomeCoordinator(navigationController: self.navigationController)
                childCoordinators.append(homeVC.coordinator!)
                navController.pushViewController(homeVC, animated: true)
