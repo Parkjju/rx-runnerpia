@@ -43,6 +43,12 @@
 		C941F5312AD61A2200F43668 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5302AD61A2200F43668 /* TabBarCoordinator.swift */; };
 		C9449D662AD64937003F72CF /* RouteFollowingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D652AD64937003F72CF /* RouteFollowingCoordinator.swift */; };
 		C9449D682AD64997003F72CF /* MyPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D672AD64997003F72CF /* MyPageCoordinator.swift */; };
+		C9449D6A2AD65C73003F72CF /* Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C9449D692AD65C73003F72CF /* Home.gpx */; };
+		C9449D6C2AD65ED5003F72CF /* RouteFollowingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D6B2AD65ED5003F72CF /* RouteFollowingViewModel.swift */; };
+		C9449D6E2AD66295003F72CF /* RouteRunningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D6D2AD66295003F72CF /* RouteRunningViewModel.swift */; };
+		C9449D702AD664F7003F72CF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D6F2AD664F7003F72CF /* HomeViewModel.swift */; };
+		C9449D752AD666A9003F72CF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D742AD666A9003F72CF /* LocationManager.swift */; };
+		C9449D792AD66944003F72CF /* CoreLocation+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D782AD66944003F72CF /* CoreLocation+Rx.swift */; };
 		C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D9292AC3F50E00015407 /* AppDelegate.swift */; };
 		C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C947D9322AC3F50E00015407 /* runnerpia.xcdatamodeld */; };
 		C947D9362AC3F51000015407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C947D9352AC3F51000015407 /* Assets.xcassets */; };
@@ -112,6 +118,12 @@
 		C941F5302AD61A2200F43668 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		C9449D652AD64937003F72CF /* RouteFollowingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFollowingCoordinator.swift; sourceTree = "<group>"; };
 		C9449D672AD64997003F72CF /* MyPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCoordinator.swift; sourceTree = "<group>"; };
+		C9449D692AD65C73003F72CF /* Home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Home.gpx; sourceTree = "<group>"; };
+		C9449D6B2AD65ED5003F72CF /* RouteFollowingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFollowingViewModel.swift; sourceTree = "<group>"; };
+		C9449D6D2AD66295003F72CF /* RouteRunningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRunningViewModel.swift; sourceTree = "<group>"; };
+		C9449D6F2AD664F7003F72CF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C9449D742AD666A9003F72CF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C9449D782AD66944003F72CF /* CoreLocation+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreLocation+Rx.swift"; sourceTree = "<group>"; };
 		C947D9262AC3F50E00015407 /* runnerpia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runnerpia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C947D9292AC3F50E00015407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C947D9332AC3F50E00015407 /* runnerpia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = runnerpia.xcdatamodel; sourceTree = "<group>"; };
@@ -189,6 +201,7 @@
 		88E172452AD3870100A4A852 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C9449D732AD6667E003F72CF /* LocationManager */,
 				88E172702AD5745200A4A852 /* Tags */,
 				C941F5042AD5274600F43668 /* Base */,
 			);
@@ -206,6 +219,7 @@
 		88E172472AD390CC00A4A852 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C9449D772AD66938003F72CF /* RxSwift */,
 				88E172662AD55E1700A4A852 /* UIView */,
 				C941F5212AD53D7300F43668 /* UIFont */,
 				C941F51E2AD5392E00F43668 /* UIColor */,
@@ -227,9 +241,9 @@
 		88E1724A2AD390EE00A4A852 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				88E172732AD5868000A4A852 /* RouteRunning */,
 				C941F5092AD5291800F43668 /* Main */,
 				C941F50A2AD5298000F43668 /* Home */,
+				88E172732AD5868000A4A852 /* RouteRunning */,
 				C941F50E2AD52AE200F43668 /* RouteFollowing */,
 				88E172522AD5541400A4A852 /* My Page */,
 				C941F5132AD52B2200F43668 /* RouteDetail */,
@@ -293,6 +307,7 @@
 		88E172732AD5868000A4A852 /* RouteRunning */ = {
 			isa = PBXGroup;
 			children = (
+				C9449D6D2AD66295003F72CF /* RouteRunningViewModel.swift */,
 				88E172742AD586A800A4A852 /* RouteRunningViewController.swift */,
 			);
 			path = RouteRunning;
@@ -321,6 +336,7 @@
 			children = (
 				88E172692AD55E3D00A4A852 /* HomeSubviews */,
 				C941F52E2AD6173E00F43668 /* HomeCoordinator.swift */,
+				C9449D6F2AD664F7003F72CF /* HomeViewModel.swift */,
 				C941F50B2AD529B300F43668 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -330,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				C9449D652AD64937003F72CF /* RouteFollowingCoordinator.swift */,
+				C9449D6B2AD65ED5003F72CF /* RouteFollowingViewModel.swift */,
 				C941F50F2AD52AF300F43668 /* RouteFollowingViewController.swift */,
 			);
 			path = RouteFollowing;
@@ -383,6 +400,22 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		C9449D732AD6667E003F72CF /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				C9449D742AD666A9003F72CF /* LocationManager.swift */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		C9449D772AD66938003F72CF /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				C9449D782AD66944003F72CF /* CoreLocation+Rx.swift */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
 		C947D91D2AC3F50E00015407 = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +441,7 @@
 		C947D9282AC3F50E00015407 /* runnerpia */ = {
 			isa = PBXGroup;
 			children = (
+				C9449D692AD65C73003F72CF /* Home.gpx */,
 				88E172442AD386F800A4A852 /* Application */,
 				88E172452AD3870100A4A852 /* Common */,
 				88E172462AD390C300A4A852 /* Configs */,
@@ -554,6 +588,7 @@
 				88E1725B2AD5588F00A4A852 /* Pretendard-ExtraLight.otf in Resources */,
 				88E1725C2AD5588F00A4A852 /* Pretendard-Light.otf in Resources */,
 				88E1725D2AD5588F00A4A852 /* Pretendard-Medium.otf in Resources */,
+				C9449D6A2AD65C73003F72CF /* Home.gpx in Resources */,
 				88E1725E2AD5588F00A4A852 /* Pretendard-Regular.otf in Resources */,
 				88E1725F2AD5588F00A4A852 /* Pretendard-SemiBold.otf in Resources */,
 				88E172602AD5588F00A4A852 /* Pretendard-Thin.otf in Resources */,
@@ -703,7 +738,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9449D6C2AD65ED5003F72CF /* RouteFollowingViewModel.swift in Sources */,
 				C941F5172AD52CF500F43668 /* AppCoordinator.swift in Sources */,
+				C9449D792AD66944003F72CF /* CoreLocation+Rx.swift in Sources */,
+				C9449D752AD666A9003F72CF /* LocationManager.swift in Sources */,
 				C9449D662AD64937003F72CF /* RouteFollowingCoordinator.swift in Sources */,
 				C941F5102AD52AF300F43668 /* RouteFollowingViewController.swift in Sources */,
 				C941F5312AD61A2200F43668 /* TabBarCoordinator.swift in Sources */,
@@ -717,6 +755,7 @@
 				88E172722AD5745900A4A852 /* Tags.swift in Sources */,
 				88E172752AD586A800A4A852 /* RouteRunningViewController.swift in Sources */,
 				88E172512AD3A8FD00A4A852 /* TabBarController.swift in Sources */,
+				C9449D702AD664F7003F72CF /* HomeViewModel.swift in Sources */,
 				88E172682AD55E2300A4A852 /* UIView+.swift in Sources */,
 				88E1726D2AD5737300A4A852 /* MainRoute.swift in Sources */,
 				88E172652AD55D0900A4A852 /* RecommendContentsView.swift in Sources */,
@@ -724,6 +763,7 @@
 				88E1726F2AD5739900A4A852 /* FollowingRoute.swift in Sources */,
 				C941F52F2AD6173E00F43668 /* HomeCoordinator.swift in Sources */,
 				C941F51B2AD5334E00F43668 /* UIImage+.swift in Sources */,
+				C9449D6E2AD66295003F72CF /* RouteRunningViewModel.swift in Sources */,
 				88E172542AD5542800A4A852 /* MyPageViewController.swift in Sources */,
 				C941F5232AD53D8100F43668 /* UIFont+.swift in Sources */,
 				C941F5202AD5393B00F43668 /* UIColor+.swift in Sources */,
@@ -778,6 +818,7 @@
 /* Begin XCBuildConfiguration section */
 		C947D9512AC3F51000015407 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88FA2B9B2AD58DA000AE835B /* runnerpia.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -826,7 +867,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -838,6 +879,7 @@
 		};
 		C947D9522AC3F51000015407 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88FA2B9B2AD58DA000AE835B /* runnerpia.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -880,7 +922,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
