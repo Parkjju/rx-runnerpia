@@ -10,4 +10,8 @@ import CoreLocation
 
 class LocationManager {
     static let shared = CLLocationManager()
+    
+    static func getAuthorizationStatus() -> CLAuthorizationStatus {
+        return LocationManager.shared.authorizationStatus
+    }
 }
