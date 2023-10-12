@@ -63,7 +63,7 @@ class RouteRunningViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        let input = RouteRunningViewModel.Input(viewDidLoadTrigger: viewDidLoadTrigger, didChangeCoordinate: LocationManager.shared.rx.didUpdateLocations, buttonTouchDownEvent: recordSectionView.recordTriggerButton.rx.controlEvent(.touchDown).asObservable(), buttonTouchUpEvent: recordSectionView.recordTriggerButton.rx.controlEvent(.touchUpInside).asObservable(), pauseButtonTapTrigger: recordSectionView.pauseButton.rx.controlEvent(.touchUpInside).asObservable(), playButtonTapTrigger: recordSectionView.playButton.rx.controlEvent(.touchUpInside).asObservable())
+        let input = RouteRunningViewModel.Input(viewDidLoadTrigger: viewDidLoadTrigger, didChangeCoordinate: LocationManager.shared.rx.didUpdateLocations, buttonTouchDownEvent: recordSectionView.recordTriggerButton.rx.controlEvent(.touchDown).asObservable(), buttonTouchUpEvent: recordSectionView.recordTriggerButton.rx.controlEvent(.touchUpInside).asObservable(), pauseButtonTapTrigger: recordSectionView.pauseButton.rx.controlEvent(.touchUpInside).asObservable(), playButtonTapTrigger: recordSectionView.playButton.rx.controlEvent(.touchUpInside).asObservable(), stopButtonTouchDownEvent: recordSectionView.stopButton.rx.controlEvent(.touchDown).asObservable(), stopButtonTouchUpEvent: recordSectionView.stopButton.rx.controlEvent(.touchUpInside).asObservable())
         
         let output = viewModel.transform(input: input)
         
@@ -121,7 +121,21 @@ class RouteRunningViewController: BaseViewController {
                 let kilometer = $0 / 1000
                 let meter = ($0 % 1000) / 10 < 10 ? "0\(($0 % 1000) / 10)" : "\(($0 % 1000) / 10)"
                 self.recordSectionView.distanceLabel.text = "\(kilometer).\(meter)km"
-                print("DIST: \($0)")
+            })
+            .disposed(by: disposeBag)
+        
+        output.isRecordStop
+            .drive(onNext: { [unowned self] in
+                if $0 {
+                    let alert = UIAlertController(title: "경로 기록을 종료할까요?", message: nil, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "확인", style: .default, handler: { _ in
+                        self.navigationController?.pushViewController(MyPageViewController(), animated: true)
+                    })
+                    let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+                    alert.addAction(okAction)
+                    alert.addAction(cancelAction)
+                    self.present(alert, animated: true)
+                }
             })
             .disposed(by: disposeBag)
     }
@@ -141,4 +155,5 @@ class RouteRunningViewController: BaseViewController {
         self.recordSectionView.stopButton.isHidden = !isHidden
         self.recordSectionView.pauseButton.isHidden = isHidden
     }
+     
 }
