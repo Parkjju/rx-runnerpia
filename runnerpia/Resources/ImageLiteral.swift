@@ -26,4 +26,7 @@ enum ImageLiteral {
     static var imgAdd: UIImage {.load(named: "imgAdd")}
     static var imgRightAngle: UIImage {.load(named: "imgRightAngle")}
     static var imgCustomMarker: UIImage {.load(named: "imgCustomMarker")}
+    static var imgPause: UIImage {.load(named: "imgPause")}
+    static var imgPlay: UIImage {.load(named: "imgPlay")}
+    static var imgStop: UIImage {.load(named: "imgStop")}
 }
