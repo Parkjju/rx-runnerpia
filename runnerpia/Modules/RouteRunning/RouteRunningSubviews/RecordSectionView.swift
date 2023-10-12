@@ -32,6 +32,7 @@ class RecordSectionView: UIView {
     
     let distanceLabel = UILabel()
         .then {
+            $0.textAlignment = .center
             $0.isHidden = true
             $0.text = "0.00km"
             $0.font = .pretendard(.bold, ofSize: 34)
@@ -124,7 +125,7 @@ class RecordSectionView: UIView {
         }
         
         distanceLabel.snp.makeConstraints { make in
-            make.width.equalTo(130)
+            make.width.equalTo(150)
             make.top.equalTo(timeLabel)
             make.centerX.equalTo(distanceSubLabel)
         }
