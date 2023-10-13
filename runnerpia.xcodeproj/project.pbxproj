@@ -50,6 +50,8 @@
 		C9449D752AD666A9003F72CF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D742AD666A9003F72CF /* LocationManager.swift */; };
 		C9449D792AD66944003F72CF /* CoreLocation+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D782AD66944003F72CF /* CoreLocation+Rx.swift */; };
 		C9449E042AD68A35003F72CF /* RecordSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449E032AD68A35003F72CF /* RecordSectionView.swift */; };
+		C9449E072AD8FFCE003F72CF /* RouteRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449E062AD8FFCE003F72CF /* RouteRegisterViewModel.swift */; };
+		C9449E092AD8FFDD003F72CF /* RouteRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449E082AD8FFDD003F72CF /* RouteRegisterViewController.swift */; };
 		C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D9292AC3F50E00015407 /* AppDelegate.swift */; };
 		C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C947D9322AC3F50E00015407 /* runnerpia.xcdatamodeld */; };
 		C947D9362AC3F51000015407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C947D9352AC3F51000015407 /* Assets.xcassets */; };
@@ -126,6 +128,8 @@
 		C9449D742AD666A9003F72CF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C9449D782AD66944003F72CF /* CoreLocation+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreLocation+Rx.swift"; sourceTree = "<group>"; };
 		C9449E032AD68A35003F72CF /* RecordSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSectionView.swift; sourceTree = "<group>"; };
+		C9449E062AD8FFCE003F72CF /* RouteRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRegisterViewModel.swift; sourceTree = "<group>"; };
+		C9449E082AD8FFDD003F72CF /* RouteRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRegisterViewController.swift; sourceTree = "<group>"; };
 		C947D9262AC3F50E00015407 /* runnerpia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runnerpia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C947D9292AC3F50E00015407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C947D9332AC3F50E00015407 /* runnerpia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = runnerpia.xcdatamodel; sourceTree = "<group>"; };
@@ -247,8 +251,9 @@
 				C941F50A2AD5298000F43668 /* Home */,
 				88E172732AD5868000A4A852 /* RouteRunning */,
 				C941F50E2AD52AE200F43668 /* RouteFollowing */,
-				88E172522AD5541400A4A852 /* My Page */,
+				C9449E052AD8FFBC003F72CF /* RouteRegister */,
 				C941F5132AD52B2200F43668 /* RouteDetail */,
+				88E172522AD5541400A4A852 /* My Page */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -425,6 +430,15 @@
 				C9449E032AD68A35003F72CF /* RecordSectionView.swift */,
 			);
 			path = RouteRunningSubviews;
+			sourceTree = "<group>";
+		};
+		C9449E052AD8FFBC003F72CF /* RouteRegister */ = {
+			isa = PBXGroup;
+			children = (
+				C9449E062AD8FFCE003F72CF /* RouteRegisterViewModel.swift */,
+				C9449E082AD8FFDD003F72CF /* RouteRegisterViewController.swift */,
+			);
+			path = RouteRegister;
 			sourceTree = "<group>";
 		};
 		C947D91D2AC3F50E00015407 = {
@@ -759,6 +773,8 @@
 				C941F5312AD61A2200F43668 /* TabBarCoordinator.swift in Sources */,
 				C941F5192AD532AE00F43668 /* ImageLiteral.swift in Sources */,
 				88E1726B2AD5624D00A4A852 /* SafeTagContentsView.swift in Sources */,
+				C9449E072AD8FFCE003F72CF /* RouteRegisterViewModel.swift in Sources */,
+				C9449E092AD8FFDD003F72CF /* RouteRegisterViewController.swift in Sources */,
 				C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */,
 				C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */,
 				C941F50C2AD529B300F43668 /* HomeViewController.swift in Sources */,
