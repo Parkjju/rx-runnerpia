@@ -32,6 +32,7 @@ class RouteRunningViewModel: ViewModelType {
         let runningTime: Driver<Int>
         let runningDistance: Driver<Int>
         let isRecordStop: Driver<Bool>
+        let recordingCoordinates: Driver<[NMGLatLng]>
     }
     
     func transform(input: Input) -> Output {
@@ -43,7 +44,7 @@ class RouteRunningViewModel: ViewModelType {
         let lastCoordinate = BehaviorRelay<CLLocation?>(value: nil)
         let distance = BehaviorRelay<Int>(value: 0)
         let isRecordStop = BehaviorRelay<Bool>(value: false)
-        let recordingLocation = BehaviorRelay<NMGLatLng?>(value: nil)
+        let recordingCoordinates = BehaviorRelay<[NMGLatLng]>(value: [])
         
         
         input.viewDidLoadTrigger
@@ -115,6 +116,9 @@ class RouteRunningViewModel: ViewModelType {
                 }
                 distance.accept(distance.value + Int(currentLocation.distance(from: coordinate)))
                 lastCoordinate.accept(currentLocation)
+                
+                let nmg = NMGLatLng(lat: currentLocation.coordinate.latitude, lng: currentLocation.coordinate.longitude)
+                recordingCoordinates.accept(recordingCoordinates.value + [nmg])
             })
             .disposed(by: bag)
         
@@ -134,6 +138,6 @@ class RouteRunningViewModel: ViewModelType {
 
 
         
-        return Output(startPosition: startPosition, currentPosition: currentPosition, isRecordStarted: recordStartTrigger.asDriver(), isRecordPaused: isRecordPaused.asDriver(), runningTime: runningTime.asDriver(), runningDistance: distance.asDriver(), isRecordStop: isRecordStop.asDriver())
+        return Output(startPosition: startPosition, currentPosition: currentPosition, isRecordStarted: recordStartTrigger.asDriver(), isRecordPaused: isRecordPaused.asDriver(), runningTime: runningTime.asDriver(), runningDistance: distance.asDriver(), isRecordStop: isRecordStop.asDriver(), recordingCoordinates: recordingCoordinates.asDriver())
     }
 }

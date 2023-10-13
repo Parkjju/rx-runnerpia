@@ -21,7 +21,7 @@ class RouteRunningViewController: BaseViewController {
     var viewModel: RouteRunningViewModel
     let marker = NMFMarker()
     let viewDidLoadTrigger = PublishSubject<Void>()
-    let polyline = NMFPolylineOverlay([])
+    let pathOverlay = NMFPath()
     var homeFlow: HomeFlow
     
     // MARK: - Life Cycles
@@ -63,8 +63,12 @@ class RouteRunningViewController: BaseViewController {
         marker.position = NMGLatLng(lat: 0, lng: 0)
         marker.mapView = mapView
         marker.iconImage = NMFOverlayImage(image: ImageLiteral.imgCustomMarker)
+        marker.anchor = CGPoint(x: 0.5, y: 0.5)
         
-        polyline?.mapView = mapView
+        pathOverlay.mapView = mapView
+        pathOverlay.color = .init(hex: "#005BE4")
+        pathOverlay.outlineColor = .clear
+        pathOverlay.width = 10
     }
     
     override func bindViewModel() {
@@ -141,6 +145,13 @@ class RouteRunningViewController: BaseViewController {
                     alert.addAction(cancelAction)
                     self.present(alert, animated: true)
                 }
+            })
+            .disposed(by: disposeBag)
+        
+        output.recordingCoordinates
+            .drive(onNext: { [unowned self] in
+                self.pathOverlay.path = NMGLineString(points: $0)
+                self.pathOverlay.mapView = self.mapView
             })
             .disposed(by: disposeBag)
     }
