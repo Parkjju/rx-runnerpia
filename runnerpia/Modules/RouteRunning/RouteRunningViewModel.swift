@@ -43,6 +43,7 @@ class RouteRunningViewModel: ViewModelType {
         let lastCoordinate = BehaviorRelay<CLLocation?>(value: nil)
         let distance = BehaviorRelay<Int>(value: 0)
         let isRecordStop = BehaviorRelay<Bool>(value: false)
+        let recordingLocation = BehaviorRelay<NMGLatLng?>(value: nil)
         
         
         input.viewDidLoadTrigger
@@ -65,7 +66,7 @@ class RouteRunningViewModel: ViewModelType {
                 Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance).take(until: input.buttonTouchUpEvent)
             }
             .subscribe(onNext: { second in
-                if second >= 1 {
+                if second > 0  {
                     recordStartTrigger.accept(true)
                     isRecordPaused.accept(false)
                 } else {
@@ -122,7 +123,7 @@ class RouteRunningViewModel: ViewModelType {
                 Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance).take(until: input.stopButtonTouchUpEvent)
             }
             .subscribe(onNext: { second in
-                if second >= 1 && second < 2 {
+                if second > 0 && second <= 1 {
                     isRecordStop.accept(true)
                 } else {
                     isRecordStop.accept(false)

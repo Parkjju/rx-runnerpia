@@ -21,10 +21,13 @@ class RouteRunningViewController: BaseViewController {
     var viewModel: RouteRunningViewModel
     let marker = NMFMarker()
     let viewDidLoadTrigger = PublishSubject<Void>()
+    let polyline = NMFPolylineOverlay([])
+    var homeFlow: HomeFlow
     
     // MARK: - Life Cycles
-    init(viewModel: RouteRunningViewModel) {
+    init(viewModel: RouteRunningViewModel, homeFlow: HomeFlow) {
         self.viewModel = viewModel
+        self.homeFlow = homeFlow
         super.init()
     }
     
@@ -60,6 +63,8 @@ class RouteRunningViewController: BaseViewController {
         marker.position = NMGLatLng(lat: 0, lng: 0)
         marker.mapView = mapView
         marker.iconImage = NMFOverlayImage(image: ImageLiteral.imgCustomMarker)
+        
+        polyline?.mapView = mapView
     }
     
     override func bindViewModel() {
@@ -129,7 +134,7 @@ class RouteRunningViewController: BaseViewController {
                 if $0 {
                     let alert = UIAlertController(title: "경로 기록을 종료할까요?", message: nil, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "확인", style: .default, handler: { _ in
-                        self.navigationController?.pushViewController(MyPageViewController(), animated: true)
+                        self.homeFlow.push(scene: .runningComplete)
                     })
                     let cancelAction = UIAlertAction(title: "취소", style: .cancel)
                     alert.addAction(okAction)
