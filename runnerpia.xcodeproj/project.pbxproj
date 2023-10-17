@@ -59,6 +59,13 @@
 		C947D9442AC3F51000015407 /* runnerpiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D9432AC3F51000015407 /* runnerpiaTests.swift */; };
 		C947D94E2AC3F51000015407 /* runnerpiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D94D2AC3F51000015407 /* runnerpiaUITests.swift */; };
 		C947D9502AC3F51000015407 /* runnerpiaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D94F2AC3F51000015407 /* runnerpiaUITestsLaunchTests.swift */; };
+		C985BD182ADE49FD00B7F983 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985BD172ADE49FD00B7F983 /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		C985BD1B2ADE4A9900B7F983 /* SecureTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985BD1A2ADE4A9900B7F983 /* SecureTagCell.swift */; };
+		C985BD1D2ADE4AA500B7F983 /* RecommendedTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985BD1C2ADE4AA500B7F983 /* RecommendedTagCell.swift */; };
+		C985BD1F2ADE4AF100B7F983 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985BD1E2ADE4AF100B7F983 /* BaseCollectionViewCell.swift */; };
+		C985BD222ADE4E4D00B7F983 /* SecureTagCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985BD212ADE4E4D00B7F983 /* SecureTagCellViewModel.swift */; };
+		C985BD242ADE4E5900B7F983 /* RecommendedTagCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985BD232ADE4E5900B7F983 /* RecommendedTagCellViewModel.swift */; };
+		C985BD272ADE5A4F00B7F983 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985BD262ADE5A4F00B7F983 /* UICollectionView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +148,13 @@
 		C947D9492AC3F51000015407 /* runnerpiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = runnerpiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C947D94D2AC3F51000015407 /* runnerpiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = runnerpiaUITests.swift; sourceTree = "<group>"; };
 		C947D94F2AC3F51000015407 /* runnerpiaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = runnerpiaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C985BD172ADE49FD00B7F983 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		C985BD1A2ADE4A9900B7F983 /* SecureTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTagCell.swift; sourceTree = "<group>"; };
+		C985BD1C2ADE4AA500B7F983 /* RecommendedTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTagCell.swift; sourceTree = "<group>"; };
+		C985BD1E2ADE4AF100B7F983 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		C985BD212ADE4E4D00B7F983 /* SecureTagCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTagCellViewModel.swift; sourceTree = "<group>"; };
+		C985BD232ADE4E5900B7F983 /* RecommendedTagCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTagCellViewModel.swift; sourceTree = "<group>"; };
+		C985BD262ADE5A4F00B7F983 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 		D8E70B71074A79276198363F /* Pods-runnerpiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-runnerpiaTests.release.xcconfig"; path = "Target Support Files/Pods-runnerpiaTests/Pods-runnerpiaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,6 +244,7 @@
 				C941F5212AD53D7300F43668 /* UIFont */,
 				C941F51E2AD5392E00F43668 /* UIColor */,
 				C941F51D2AD5337400F43668 /* UIImage */,
+				C985BD152ADE49D700B7F983 /* UICollectionView */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,6 +341,7 @@
 			children = (
 				C941F5052AD5275100F43668 /* BaseViewController.swift */,
 				C941F5072AD5284200F43668 /* BaseViewModel.swift */,
+				C985BD1E2ADE4AF100B7F983 /* BaseCollectionViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -435,6 +451,7 @@
 		C9449E052AD8FFBC003F72CF /* RouteRegister */ = {
 			isa = PBXGroup;
 			children = (
+				C985BD202ADE4E3500B7F983 /* Cell */,
 				C9449E062AD8FFCE003F72CF /* RouteRegisterViewModel.swift */,
 				C9449E082AD8FFDD003F72CF /* RouteRegisterViewController.swift */,
 			);
@@ -495,6 +512,34 @@
 				C947D94F2AC3F51000015407 /* runnerpiaUITestsLaunchTests.swift */,
 			);
 			path = runnerpiaUITests;
+			sourceTree = "<group>";
+		};
+		C985BD152ADE49D700B7F983 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C985BD162ADE49E400B7F983 /* LeftAlignedCollectionView */,
+				C985BD262ADE5A4F00B7F983 /* UICollectionView+.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		C985BD162ADE49E400B7F983 /* LeftAlignedCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C985BD172ADE49FD00B7F983 /* LeftAlignedCollectionViewFlowLayout.swift */,
+			);
+			path = LeftAlignedCollectionView;
+			sourceTree = "<group>";
+		};
+		C985BD202ADE4E3500B7F983 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C985BD1A2ADE4A9900B7F983 /* SecureTagCell.swift */,
+				C985BD212ADE4E4D00B7F983 /* SecureTagCellViewModel.swift */,
+				C985BD1C2ADE4AA500B7F983 /* RecommendedTagCell.swift */,
+				C985BD232ADE4E5900B7F983 /* RecommendedTagCellViewModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -766,6 +811,9 @@
 				C9449D6C2AD65ED5003F72CF /* RouteFollowingViewModel.swift in Sources */,
 				C9449E042AD68A35003F72CF /* RecordSectionView.swift in Sources */,
 				C941F5172AD52CF500F43668 /* AppCoordinator.swift in Sources */,
+				C985BD182ADE49FD00B7F983 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
+				C985BD222ADE4E4D00B7F983 /* SecureTagCellViewModel.swift in Sources */,
+				C985BD1D2ADE4AA500B7F983 /* RecommendedTagCell.swift in Sources */,
 				C9449D792AD66944003F72CF /* CoreLocation+Rx.swift in Sources */,
 				C9449D752AD666A9003F72CF /* LocationManager.swift in Sources */,
 				C9449D662AD64937003F72CF /* RouteFollowingCoordinator.swift in Sources */,
@@ -786,15 +834,19 @@
 				C9449D702AD664F7003F72CF /* HomeViewModel.swift in Sources */,
 				88E172682AD55E2300A4A852 /* UIView+.swift in Sources */,
 				88E1726D2AD5737300A4A852 /* MainRoute.swift in Sources */,
+				C985BD272ADE5A4F00B7F983 /* UICollectionView+.swift in Sources */,
 				88E172652AD55D0900A4A852 /* RecommendContentsView.swift in Sources */,
 				C9449D682AD64997003F72CF /* MyPageCoordinator.swift in Sources */,
 				88E1726F2AD5739900A4A852 /* FollowingRoute.swift in Sources */,
 				C941F52F2AD6173E00F43668 /* HomeCoordinator.swift in Sources */,
+				C985BD1F2ADE4AF100B7F983 /* BaseCollectionViewCell.swift in Sources */,
 				C941F51B2AD5334E00F43668 /* UIImage+.swift in Sources */,
 				C9449D6E2AD66295003F72CF /* RouteRunningViewModel.swift in Sources */,
 				88E172542AD5542800A4A852 /* MyPageViewController.swift in Sources */,
 				C941F5232AD53D8100F43668 /* UIFont+.swift in Sources */,
+				C985BD242ADE4E5900B7F983 /* RecommendedTagCellViewModel.swift in Sources */,
 				C941F5202AD5393B00F43668 /* UIColor+.swift in Sources */,
+				C985BD1B2ADE4A9900B7F983 /* SecureTagCell.swift in Sources */,
 				C941F5152AD52B3900F43668 /* RouteDetailViewController.swift in Sources */,
 				C941F5062AD5275100F43668 /* BaseViewController.swift in Sources */,
 			);
