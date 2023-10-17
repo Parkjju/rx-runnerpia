@@ -11,6 +11,7 @@ import RxSwift
 
 class RecommendedTagCellViewModel {
     let title = BehaviorRelay<String>(value: "")
+    let isSelected = BehaviorRelay<Bool>(value: false)
     
     init(with recommendedTag: RecommendTags) {
         self.title.accept(recommendedTag.rawValue)

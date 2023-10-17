@@ -11,6 +11,7 @@ import RxSwift
 
 class SecureTagCellViewModel {
     let title = BehaviorRelay<String>(value: "")
+    let isSelected = BehaviorRelay<Bool>(value: false)
     
     init(with secureTag: SecureTags) {
         self.title.accept(secureTag.rawValue)
