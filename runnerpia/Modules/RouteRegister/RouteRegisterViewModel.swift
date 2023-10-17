@@ -11,9 +11,11 @@ import RxSwift
 
 class RouteRegisterViewModel: ViewModelType {
     
+    var disposeBag = DisposeBag()
+    
     struct Input {
-        let secureTagSelected: Observable<SecureTagCell>
-        let recommendedTagSelected: Observable<RecommendedTagCell>
+        let secureTagSelected: Observable<SecureTagCellViewModel>
+        let recommendedTagSelected: Observable<RecommendedTagCellViewModel>
     }
     
     struct Output {
@@ -24,6 +26,18 @@ class RouteRegisterViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let secureTagItems = BehaviorRelay<[SecureTagCellViewModel]>(value: [])
         let recommendedTagItems = BehaviorRelay<[RecommendedTagCellViewModel]>(value: [])
+        
+        input.secureTagSelected
+            .subscribe(onNext: {
+                $0.isSelected.accept(!$0.isSelected.value)
+            })
+            .disposed(by: disposeBag)
+        
+        input.recommendedTagSelected
+            .subscribe(onNext: {
+                $0.isSelected.accept(!$0.isSelected.value)
+            })
+            .disposed(by: disposeBag)
         
         secureTagItems.accept(SecureTags.retrieveAllSecureTagsWithArray()
             .map {
