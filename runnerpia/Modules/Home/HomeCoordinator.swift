@@ -16,6 +16,7 @@ enum HomeFlowScenes {
 protocol HomeFlow {
     func push(scene: HomeFlowScenes)
     func pop()
+    func popToRootView()
 }
 
 class HomeCoordinator: Coordinator, HomeFlow {
@@ -45,5 +46,9 @@ class HomeCoordinator: Coordinator, HomeFlow {
     
     func pop() {
         navigationController.popViewController(animated: true)
+    }
+    
+    func popToRootView() {
+        navigationController.popToRootViewController(animated: true)
     }
 }
