@@ -301,7 +301,7 @@ class RouteRegisterViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        let input = RouteRegisterViewModel.Input(secureTagSelected: secureTagCollectionView.rx.modelSelected(SecureTagCell.self).asObservable(), recommendedTagSelected: recommendedTagCollectionView.rx.modelSelected(RecommendedTagCell.self).asObservable())
+        let input = RouteRegisterViewModel.Input(secureTagSelected: secureTagCollectionView.rx.modelSelected(SecureTagCellViewModel.self).asObservable(), recommendedTagSelected: recommendedTagCollectionView.rx.modelSelected(RecommendedTagCellViewModel.self).asObservable())
         
         let output = viewModel.transform(input: input)
         
