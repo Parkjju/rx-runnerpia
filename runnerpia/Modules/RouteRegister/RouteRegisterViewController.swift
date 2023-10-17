@@ -146,7 +146,7 @@ class RouteRegisterViewController: BaseViewController {
     
     let divider = UIImageView(image: ImageLiteral.imgDivider)
     
-    let reviewLabel = UILabel()
+    let tagLabel = UILabel()
         .then {
             $0.font = .pretendard(.semibold, ofSize: 18)
             $0.text = "다녀오신 경로를 평가해주세요!"
@@ -192,9 +192,62 @@ class RouteRegisterViewController: BaseViewController {
         return cv
     }()
     
+    let dividerUnderTags = UIImageView(image: ImageLiteral.imgDivider)
+    
+    let reviewLabel = UILabel()
+        .then {
+            $0.font = .pretendard(.semibold, ofSize: 18)
+            $0.text = "추천하는 경로에 대해 소개해 주세요!"
+        }
+    
+    lazy var reviewTextView = UITextView()
+        .then {
+            $0.font = .pretendard(.regular, ofSize: 14)
+            $0.clipsToBounds = true
+            $0.layer.cornerRadius = 10
+            $0.layer.borderColor = UIColor(hex: "#DFDFDF").cgColor
+            $0.layer.borderWidth = 1
+            $0.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+            $0.text = self.initialText
+        }
+    
+    let reviewTextCountLabel = UILabel()
+        .then {
+            $0.font = .pretendard(.medium, ofSize: 14)
+            $0.textColor = .init(hex: "#A5A5A5")
+        }
+    
+    let photoTextLabel = UILabel()
+        .then {
+            $0.font = .pretendard(.semibold, ofSize: 18)
+            $0.text = "경험했던 경로의 사진을 등록해주세요"
+        }
+    
+    let photoCollectionView: UICollectionView = {
+        let layout = LeftAlignedCollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 100) / 4, height: (UIScreen.main.bounds.width - 100) / 4)
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+//        cv.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "Photo")
+        
+        return cv
+    }()
+    
+    
     // MARK: - Properties
     var viewModel: RouteRegisterViewModel
     var homeFlow: HomeFlow
+    let initialText = "최소 30자 이상 작성해주세요. (비방, 욕설을 포함한 관련없는 내용은 통보 없이 삭제될 수 있습니다.)"
+    let paragraphStyle = NSMutableParagraphStyle()
+        .then {
+            $0.lineSpacing = 4
+        }
+    
+    lazy var initialProperty = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular, width: .standard), NSAttributedString.Key.foregroundColor: UIColor.init(hex: "#8B8B8B"), NSAttributedString.Key.paragraphStyle: self.paragraphStyle]
+    lazy var changedProperty = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular, width: .standard), NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.paragraphStyle: self.paragraphStyle]
     
     // MARK: - Functions
     
@@ -211,7 +264,7 @@ class RouteRegisterViewController: BaseViewController {
     override func render() {
         view.addSubView(scrollView)
         
-        scrollView.subviews.first!.addSubViews([mapView, completeLabel, locationView, dateView, timeView, distanceView, divider, reviewLabel, secureTagLabel, secureTagCollectionView, recommendedTagLabel, recommendedTagCollectionView])
+        scrollView.subviews.first!.addSubViews([mapView, completeLabel, locationView, dateView, timeView, distanceView, divider, tagLabel, secureTagLabel, secureTagCollectionView, recommendedTagLabel, recommendedTagCollectionView, dividerUnderTags, reviewLabel, reviewTextView, reviewTextCountLabel, ])
         
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -261,13 +314,13 @@ class RouteRegisterViewController: BaseViewController {
             make.trailing.equalTo(mapView)
         }
         
-        reviewLabel.snp.makeConstraints { make in
+        tagLabel.snp.makeConstraints { make in
             make.top.equalTo(divider.snp.bottom).offset(20)
             make.leading.equalTo(mapView)
         }
         
         secureTagLabel.snp.makeConstraints { make in
-            make.top.equalTo(reviewLabel.snp.bottom).offset(16)
+            make.top.equalTo(tagLabel.snp.bottom).offset(16)
             make.leading.equalTo(mapView)
         }
         
@@ -288,7 +341,28 @@ class RouteRegisterViewController: BaseViewController {
             make.leading.equalTo(mapView.snp.leading)
             make.trailing.equalTo(mapView.snp.trailing)
             make.height.equalTo(60)
+        }
+        
+        dividerUnderTags.snp.makeConstraints { make in
+            make.top.equalTo(recommendedTagCollectionView.snp.bottom).offset(20)
+            make.leading.equalTo(mapView)
+        }
+        
+        reviewLabel.snp.makeConstraints { make in
+            make.top.equalTo(dividerUnderTags.snp.bottom).offset(20)
+            make.leading.equalTo(mapView)
+        }
+        
+        reviewTextView.snp.makeConstraints { make in
+            make.top.equalTo(reviewLabel.snp.bottom).offset(12)
+            make.leading.trailing.equalTo(mapView)
+            make.height.equalTo(215)
             make.bottom.equalTo(scrollView.snp.bottom).offset(-20)
+        }
+        
+        reviewTextCountLabel.snp.makeConstraints { make in
+            make.top.equalTo(reviewTextView.snp.bottom).offset(10)
+            make.trailing.equalTo(mapView)
         }
     }
     
@@ -298,6 +372,60 @@ class RouteRegisterViewController: BaseViewController {
         
         let rightBarButtonItem = UIBarButtonItem(image: ImageLiteral.imgClose.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(closeButtonTapped))
         navigationItem.rightBarButtonItem = rightBarButtonItem
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(scrollViewTapped))
+        recognizer.numberOfTapsRequired = 1
+        recognizer.isEnabled = true
+        recognizer.cancelsTouchesInView = false
+        scrollView.addGestureRecognizer(recognizer)
+        
+        reviewTextView.rx.didBeginEditing
+            .asDriver()
+            .drive(onNext: { [unowned self] in
+                if self.reviewTextView.text == initialText {
+                    self.reviewTextView.text = ""
+                    self.reviewTextView.attributedText = NSAttributedString(string: "", attributes: self.changedProperty)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        reviewTextView.rx.didEndEditing
+            .asDriver()
+            .drive(onNext: { [unowned self] in
+                if reviewTextView.text.isEmpty {
+                    reviewTextView.text = self.initialText
+                    reviewTextView.attributedText = NSAttributedString(string: self.initialText, attributes: self.initialProperty)
+                } else if reviewTextView.text == self.initialText {
+                    reviewTextView.attributedText = NSAttributedString(string: self.initialText, attributes: self.changedProperty)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        reviewTextView.rx.text
+            .compactMap { $0 }
+            .scan("") { prev, new in
+                return new.count <= 300 ? new : prev
+            }
+            .map {[unowned self] in
+                if $0 == self.initialText {
+                    return NSAttributedString(string: $0, attributes: self.initialProperty)
+                } else {
+                    return NSAttributedString(string: $0, attributes: self.changedProperty)
+                }
+            }
+            .bind(to: reviewTextView.rx.attributedText )
+            .disposed(by: disposeBag)
+        
+        reviewTextView.rx.text
+            .compactMap { $0 }
+            .map { [unowned self] in
+                return $0 == self.initialText ? 0 : $0.count
+            }
+            .asDriver(onErrorJustReturn: 0)
+            .drive(onNext: { [unowned self] in
+                self.reviewTextCountLabel.text = "\($0) / 300"
+            })
+            .disposed(by: disposeBag)
     }
     
     override func bindViewModel() {
@@ -327,5 +455,10 @@ class RouteRegisterViewController: BaseViewController {
     @objc
     func closeButtonTapped() {
         homeFlow.popToRootView()
+    }
+    
+    @objc
+    func scrollViewTapped(sender: UITapGestureRecognizer) {
+        sender.view?.endEditing(true)
     }
 }
