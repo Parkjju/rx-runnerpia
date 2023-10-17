@@ -24,6 +24,16 @@ class RecommendedTagCell: BaseCollectionViewCell {
     func bind(to viewModel: RecommendedTagCellViewModel) {
         viewModel.title.bind(to: cellLabel.rx.text)
             .disposed(by: disposeBag)
+        
+        viewModel.isSelected.asDriver()
+            .drive(onNext: { [unowned self] in
+                if $0 {
+                    self.layer.opacity = 1
+                } else {
+                    self.layer.opacity = 0.6
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     override func render() {
@@ -42,4 +52,9 @@ class RecommendedTagCell: BaseCollectionViewCell {
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
     }
+    
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        alpha = 0.6
+    }
+    
 }
