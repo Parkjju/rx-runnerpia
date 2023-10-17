@@ -15,6 +15,7 @@ enum ImageLiteral {
     static var imgDeleteLine: UIImage {.load(named: "imgDeleteLine" )}
     static var imgImportantFilled: UIImage {.load(named: "imgImportantFilled")}
     static var imgLocationPinLine: UIImage {.load(named: "imgLocationPinLine")}
+    static var imgLocationFilled: UIImage {.load(named: "imgLocationFilled")}
     static var imgLogoutLine: UIImage {.load(named: "imgLogoutLine")}
     static var imgMyPage: UIImage {.load(named: "imgMyPage")}
     static var imgReviewLine: UIImage {.load(named: "imgReviewLine")}
@@ -29,4 +30,6 @@ enum ImageLiteral {
     static var imgPause: UIImage {.load(named: "imgPause")}
     static var imgPlay: UIImage {.load(named: "imgPlay")}
     static var imgStop: UIImage {.load(named: "imgStop")}
+    static var imgClose: UIImage {.load(named: "imgClose")}
+    static var imgDivider: UIImage {.load(named: "imgDivider")}
 }
