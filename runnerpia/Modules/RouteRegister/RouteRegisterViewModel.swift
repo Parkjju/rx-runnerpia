@@ -16,16 +16,21 @@ class RouteRegisterViewModel: ViewModelType {
     struct Input {
         let secureTagSelected: Observable<SecureTagCellViewModel>
         let recommendedTagSelected: Observable<RecommendedTagCellViewModel>
+        let photoCellSelected: Observable<PhotoCellViewModel>
     }
     
     struct Output {
         let secureTagCellItems: Driver<[SecureTagCellViewModel]>
         let recommendedTagCellItems: Driver<[RecommendedTagCellViewModel]>
+        let photoCellItems: Driver<[PhotoCellViewModel]>
+        let presentPickerView: Driver<Void>
     }
     
     func transform(input: Input) -> Output {
         let secureTagItems = BehaviorRelay<[SecureTagCellViewModel]>(value: [])
         let recommendedTagItems = BehaviorRelay<[RecommendedTagCellViewModel]>(value: [])
+        let photoItems = BehaviorRelay<[PhotoCellViewModel]>(value: [PhotoCellViewModel(with: nil)])
+        let presentPickerView = PublishSubject<Void>()
         
         input.secureTagSelected
             .subscribe(onNext: {
@@ -39,6 +44,12 @@ class RouteRegisterViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
+        input.photoCellSelected
+            .subscribe(onNext: { _ in
+                presentPickerView.onNext(())
+            })
+            .disposed(by: disposeBag)
+        
         secureTagItems.accept(SecureTags.retrieveAllSecureTagsWithArray()
             .map {
                 SecureTagCellViewModel(with: $0)
@@ -49,6 +60,6 @@ class RouteRegisterViewModel: ViewModelType {
                 RecommendedTagCellViewModel(with: $0)
             })
         
-        return Output(secureTagCellItems: secureTagItems.asDriver(), recommendedTagCellItems: recommendedTagItems.asDriver())
+        return Output(secureTagCellItems: secureTagItems.asDriver(), recommendedTagCellItems: recommendedTagItems.asDriver(), photoCellItems: photoItems.asDriver(), presentPickerView: presentPickerView.asDriver(onErrorJustReturn: ()))
     }
 }
