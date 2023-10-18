@@ -8,6 +8,7 @@
 import UIKit
 import NMapsMap
 import RxSwift
+import PhotosUI
 
 class RouteRegisterViewController: BaseViewController {
     
@@ -228,10 +229,10 @@ class RouteRegisterViewController: BaseViewController {
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 100) / 4, height: (UIScreen.main.bounds.width - 100) / 4)
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 62) / 4, height: (UIScreen.main.bounds.width - 62) / 4)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-//        cv.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "Photo")
+        cv.register(PhotoCell.self, forCellWithReuseIdentifier: PhotoCell.identifier)
         
         return cv
     }()
@@ -264,7 +265,7 @@ class RouteRegisterViewController: BaseViewController {
     override func render() {
         view.addSubView(scrollView)
         
-        scrollView.subviews.first!.addSubViews([mapView, completeLabel, locationView, dateView, timeView, distanceView, divider, tagLabel, secureTagLabel, secureTagCollectionView, recommendedTagLabel, recommendedTagCollectionView, dividerUnderTags, reviewLabel, reviewTextView, reviewTextCountLabel, ])
+        scrollView.subviews.first!.addSubViews([mapView, completeLabel, locationView, dateView, timeView, distanceView, divider, tagLabel, secureTagLabel, secureTagCollectionView, recommendedTagLabel, recommendedTagCollectionView, dividerUnderTags, reviewLabel, reviewTextView, reviewTextCountLabel, photoTextLabel, photoCollectionView])
         
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -357,12 +358,23 @@ class RouteRegisterViewController: BaseViewController {
             make.top.equalTo(reviewLabel.snp.bottom).offset(12)
             make.leading.trailing.equalTo(mapView)
             make.height.equalTo(215)
-            make.bottom.equalTo(scrollView.snp.bottom).offset(-20)
         }
         
         reviewTextCountLabel.snp.makeConstraints { make in
             make.top.equalTo(reviewTextView.snp.bottom).offset(10)
             make.trailing.equalTo(mapView)
+        }
+        
+        photoTextLabel.snp.makeConstraints { make in
+            make.top.equalTo(reviewTextCountLabel.snp.bottom).offset(20)
+            make.leading.equalTo(mapView)
+        }
+        
+        photoCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(photoTextLabel.snp.bottom).offset(12)
+            make.leading.trailing.equalTo(mapView)
+            make.height.equalTo(120)
+            make.bottom.equalTo(scrollView.snp.bottom).offset(-20)
         }
     }
     
@@ -429,7 +441,7 @@ class RouteRegisterViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        let input = RouteRegisterViewModel.Input(secureTagSelected: secureTagCollectionView.rx.modelSelected(SecureTagCellViewModel.self).asObservable(), recommendedTagSelected: recommendedTagCollectionView.rx.modelSelected(RecommendedTagCellViewModel.self).asObservable())
+        let input = RouteRegisterViewModel.Input(secureTagSelected: secureTagCollectionView.rx.modelSelected(SecureTagCellViewModel.self).asObservable(), recommendedTagSelected: recommendedTagCollectionView.rx.modelSelected(RecommendedTagCellViewModel.self).asObservable(), photoCellSelected: photoCollectionView.rx.modelSelected(PhotoCellViewModel.self).asObservable())
         
         let output = viewModel.transform(input: input)
         
@@ -445,10 +457,41 @@ class RouteRegisterViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
+        output.photoCellItems
+            .drive(photoCollectionView.rx.items(cellIdentifier: PhotoCell.identifier, cellType: PhotoCell.self)) { _, viewModel, cell in
+                cell.bind(to: viewModel)
+            }
+            .disposed(by: disposeBag)
+        
+        output.presentPickerView
+            .drive(onNext: { [unowned self] in
+                self.setupImagePicker()
+            })
+            .disposed(by: disposeBag)
+        
         secureTagCollectionView.updateCollectionViewHeight()
         recommendedTagCollectionView.updateCollectionViewHeight()
-        
-        
+    }
+    
+    func setupImagePicker(){
+        // 피커뷰 설정 관련 인스턴스
+        var configuration = PHPickerConfiguration()
+
+        // The default value is 1. Setting the value to 0 sets the selection limit to the maximum that the system supports.
+        // 디폴트는 1개를 가져올 수 있고 0개 선택시 무한대로 가져올 수 있다고 함
+        configuration.selectionLimit = 4
+
+        // 애셋 타입을 지정한다. Live Photo 등을 가져올 수도 있음
+        configuration.filter = .any(of: [.images])
+
+        // 피커뷰 객체 생성 시 파라미터에 설정을 전달
+        let picker = PHPickerViewController(configuration: configuration)
+
+        // 델리게이트 지정
+        picker.delegate = self
+
+        // 화면에 띄우기
+        present(picker, animated: true)
     }
     
     // MARK: - Objc Functions
@@ -460,5 +503,13 @@ class RouteRegisterViewController: BaseViewController {
     @objc
     func scrollViewTapped(sender: UITapGestureRecognizer) {
         sender.view?.endEditing(true)
+    }
+}
+
+extension RouteRegisterViewController: PHPickerViewControllerDelegate{
+    // reload하면서 이미지 순서가 뒤바뀌는 문제 발생
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        
+        
     }
 }
