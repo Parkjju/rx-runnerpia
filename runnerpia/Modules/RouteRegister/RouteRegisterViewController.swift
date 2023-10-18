@@ -7,6 +7,7 @@
 
 import UIKit
 import NMapsMap
+import RxCocoa
 import RxSwift
 import PhotosUI
 
@@ -225,7 +226,7 @@ class RouteRegisterViewController: BaseViewController {
         }
     
     let photoCollectionView: UICollectionView = {
-        let layout = LeftAlignedCollectionViewFlowLayout()
+        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
@@ -249,6 +250,9 @@ class RouteRegisterViewController: BaseViewController {
     
     lazy var initialProperty = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular, width: .standard), NSAttributedString.Key.foregroundColor: UIColor.init(hex: "#8B8B8B"), NSAttributedString.Key.paragraphStyle: self.paragraphStyle]
     lazy var changedProperty = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular, width: .standard), NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.paragraphStyle: self.paragraphStyle]
+    
+    let imagePickerObservable = PublishSubject<UIImage>()
+    let removeButtonTapTrigger = PublishSubject<Int>()
     
     // MARK: - Functions
     
@@ -441,7 +445,7 @@ class RouteRegisterViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        let input = RouteRegisterViewModel.Input(secureTagSelected: secureTagCollectionView.rx.modelSelected(SecureTagCellViewModel.self).asObservable(), recommendedTagSelected: recommendedTagCollectionView.rx.modelSelected(RecommendedTagCellViewModel.self).asObservable(), photoCellSelected: photoCollectionView.rx.modelSelected(PhotoCellViewModel.self).asObservable())
+        let input = RouteRegisterViewModel.Input(secureTagSelected: secureTagCollectionView.rx.modelSelected(SecureTagCellViewModel.self).asObservable(), recommendedTagSelected: recommendedTagCollectionView.rx.modelSelected(RecommendedTagCellViewModel.self).asObservable(), photoCellSelected: photoCollectionView.rx.modelSelected(PhotoCellViewModel.self).asObservable(), selectedImages: imagePickerObservable.asObservable(), removeTargetItem: removeButtonTapTrigger.asObservable())
         
         let output = viewModel.transform(input: input)
         
@@ -458,11 +462,13 @@ class RouteRegisterViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         output.photoCellItems
-            .drive(photoCollectionView.rx.items(cellIdentifier: PhotoCell.identifier, cellType: PhotoCell.self)) { _, viewModel, cell in
-                cell.bind(to: viewModel)
+            .drive(photoCollectionView.rx.items(cellIdentifier: PhotoCell.identifier, cellType: PhotoCell.self)) { [unowned self] row, viewModel, cell in
+                cell.disposeBag = DisposeBag()
+                cell.bind(to: viewModel, removeButtonTapped: self.removeButtonTapTrigger, indexPath: row)
+                self.photoCollectionView.updateCollectionViewHeight()
             }
             .disposed(by: disposeBag)
-        
+
         output.presentPickerView
             .drive(onNext: { [unowned self] in
                 self.setupImagePicker()
@@ -479,7 +485,7 @@ class RouteRegisterViewController: BaseViewController {
 
         // The default value is 1. Setting the value to 0 sets the selection limit to the maximum that the system supports.
         // 디폴트는 1개를 가져올 수 있고 0개 선택시 무한대로 가져올 수 있다고 함
-        configuration.selectionLimit = 4
+        configuration.selectionLimit = 6
 
         // 애셋 타입을 지정한다. Live Photo 등을 가져올 수도 있음
         configuration.filter = .any(of: [.images])
@@ -509,7 +515,32 @@ class RouteRegisterViewController: BaseViewController {
 extension RouteRegisterViewController: PHPickerViewControllerDelegate{
     // reload하면서 이미지 순서가 뒤바뀌는 문제 발생
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
         
+        // MARK: addImage도 포함해서 11개
+        if(photoCollectionView.visibleCells.count + results.count > 6){
+            let alert = UIAlertController(title: "사진 등록", message: "사진은 10장까지만 등록이 가능합니다.", preferredStyle: .alert)
+            let success = UIAlertAction(title: "확인", style:.default)
+            alert.addAction(success)
+            
+            present(alert, animated: true)
+            return
+        }
         
+        // MARK: 이미지 로드를 안하고 dismiss를 하면 비동기작업 자체를 실행하면 안됨
+        if(results.count == 0){
+            return
+        }
+        let itemProviders = results.map { $0.itemProvider }
+        
+        itemProviders.forEach { itemProvider in
+            if(itemProvider.canLoadObject(ofClass: UIImage.self)){
+                itemProvider.loadObject(ofClass: UIImage.self) {[weak self] image, _ in
+                    if let image = image as? UIImage {
+                        self?.imagePickerObservable.onNext(image)
+                    }
+                }
+            }
+        }
     }
 }
