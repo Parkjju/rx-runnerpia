@@ -394,58 +394,10 @@ class RouteRegisterViewController: BaseViewController {
         recognizer.isEnabled = true
         recognizer.cancelsTouchesInView = false
         scrollView.addGestureRecognizer(recognizer)
-        
-        reviewTextView.rx.didBeginEditing
-            .asDriver()
-            .drive(onNext: { [unowned self] in
-                if self.reviewTextView.text == initialText {
-                    self.reviewTextView.text = ""
-                    self.reviewTextView.attributedText = NSAttributedString(string: "", attributes: self.changedProperty)
-                }
-            })
-            .disposed(by: disposeBag)
-        
-        reviewTextView.rx.didEndEditing
-            .asDriver()
-            .drive(onNext: { [unowned self] in
-                if reviewTextView.text.isEmpty {
-                    reviewTextView.text = self.initialText
-                    reviewTextView.attributedText = NSAttributedString(string: self.initialText, attributes: self.initialProperty)
-                } else if reviewTextView.text == self.initialText {
-                    reviewTextView.attributedText = NSAttributedString(string: self.initialText, attributes: self.changedProperty)
-                }
-            })
-            .disposed(by: disposeBag)
-        
-        reviewTextView.rx.text
-            .compactMap { $0 }
-            .scan("") { prev, new in
-                return new.count <= 300 ? new : prev
-            }
-            .map {[unowned self] in
-                if $0 == self.initialText {
-                    return NSAttributedString(string: $0, attributes: self.initialProperty)
-                } else {
-                    return NSAttributedString(string: $0, attributes: self.changedProperty)
-                }
-            }
-            .bind(to: reviewTextView.rx.attributedText )
-            .disposed(by: disposeBag)
-        
-        reviewTextView.rx.text
-            .compactMap { $0 }
-            .map { [unowned self] in
-                return $0 == self.initialText ? 0 : $0.count
-            }
-            .asDriver(onErrorJustReturn: 0)
-            .drive(onNext: { [unowned self] in
-                self.reviewTextCountLabel.text = "\($0) / 300"
-            })
-            .disposed(by: disposeBag)
     }
     
     override func bindViewModel() {
-        let input = RouteRegisterViewModel.Input(secureTagSelected: secureTagCollectionView.rx.modelSelected(SecureTagCellViewModel.self).asObservable(), recommendedTagSelected: recommendedTagCollectionView.rx.modelSelected(RecommendedTagCellViewModel.self).asObservable(), photoCellSelected: photoCollectionView.rx.modelSelected(PhotoCellViewModel.self).asObservable(), selectedImages: imagePickerObservable.asObservable(), removeTargetItem: removeButtonTapTrigger.asObservable())
+        let input = RouteRegisterViewModel.Input(secureTagSelected: secureTagCollectionView.rx.modelSelected(SecureTagCellViewModel.self).asObservable(), recommendedTagSelected: recommendedTagCollectionView.rx.modelSelected(RecommendedTagCellViewModel.self).asObservable(), photoCellSelected: photoCollectionView.rx.modelSelected(PhotoCellViewModel.self).asObservable(), selectedImages: imagePickerObservable.asObservable(), removeTargetItem: removeButtonTapTrigger.asObservable(), textViewDidBeginEditing: reviewTextView.rx.didBeginEditing.asObservable(), textViewDidEndEditing: reviewTextView.rx.didEndEditing.asObservable(), inputText: reviewTextView.rx.text)
         
         let output = viewModel.transform(input: input)
         
@@ -473,6 +425,14 @@ class RouteRegisterViewController: BaseViewController {
             .drive(onNext: { [unowned self] in
                 self.setupImagePicker()
             })
+            .disposed(by: disposeBag)
+        
+        output.attributedText
+            .bind(to: reviewTextView.rx.attributedText)
+            .disposed(by: disposeBag)
+        
+        output.textCount
+            .bind(to: reviewTextCountLabel.rx.text)
             .disposed(by: disposeBag)
         
         secureTagCollectionView.updateCollectionViewHeight()
