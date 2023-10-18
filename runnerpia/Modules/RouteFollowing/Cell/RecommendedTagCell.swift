@@ -30,7 +30,7 @@ class RecommendedTagCell: BaseCollectionViewCell {
                 if $0 {
                     self.layer.opacity = 1
                 } else {
-                    self.layer.opacity = 0.6
+                    self.layer.opacity = 0.4
                 }
             })
             .disposed(by: disposeBag)
@@ -54,7 +54,7 @@ class RecommendedTagCell: BaseCollectionViewCell {
     }
     
     override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
-        alpha = 0.6
+        alpha = 0.4
     }
     
 }

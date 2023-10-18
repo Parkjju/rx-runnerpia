@@ -34,7 +34,7 @@
 		C941F5062AD5275100F43668 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5052AD5275100F43668 /* BaseViewController.swift */; };
 		C941F5082AD5284200F43668 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5072AD5284200F43668 /* BaseViewModel.swift */; };
 		C941F50C2AD529B300F43668 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F50B2AD529B300F43668 /* HomeViewController.swift */; };
-		C941F5102AD52AF300F43668 /* RouteFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F50F2AD52AF300F43668 /* RouteFollowingViewController.swift */; };
+		C941F5102AD52AF300F43668 /* RouteRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F50F2AD52AF300F43668 /* RouteRegisterViewController.swift */; };
 		C941F5152AD52B3900F43668 /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5142AD52B3900F43668 /* RouteDetailViewController.swift */; };
 		C941F5172AD52CF500F43668 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5162AD52CF500F43668 /* AppCoordinator.swift */; };
 		C941F5192AD532AE00F43668 /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5182AD532AE00F43668 /* ImageLiteral.swift */; };
@@ -43,17 +43,17 @@
 		C941F5232AD53D8100F43668 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5222AD53D8100F43668 /* UIFont+.swift */; };
 		C941F52F2AD6173E00F43668 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F52E2AD6173E00F43668 /* HomeCoordinator.swift */; };
 		C941F5312AD61A2200F43668 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5302AD61A2200F43668 /* TabBarCoordinator.swift */; };
-		C9449D662AD64937003F72CF /* RouteFollowingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D652AD64937003F72CF /* RouteFollowingCoordinator.swift */; };
+		C9449D662AD64937003F72CF /* RouteRegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D652AD64937003F72CF /* RouteRegisterCoordinator.swift */; };
 		C9449D682AD64997003F72CF /* MyPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D672AD64997003F72CF /* MyPageCoordinator.swift */; };
 		C9449D6A2AD65C73003F72CF /* Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C9449D692AD65C73003F72CF /* Home.gpx */; };
-		C9449D6C2AD65ED5003F72CF /* RouteFollowingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D6B2AD65ED5003F72CF /* RouteFollowingViewModel.swift */; };
+		C9449D6C2AD65ED5003F72CF /* RouteRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D6B2AD65ED5003F72CF /* RouteRegisterViewModel.swift */; };
 		C9449D6E2AD66295003F72CF /* RouteRunningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D6D2AD66295003F72CF /* RouteRunningViewModel.swift */; };
 		C9449D702AD664F7003F72CF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D6F2AD664F7003F72CF /* HomeViewModel.swift */; };
 		C9449D752AD666A9003F72CF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D742AD666A9003F72CF /* LocationManager.swift */; };
 		C9449D792AD66944003F72CF /* CoreLocation+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D782AD66944003F72CF /* CoreLocation+Rx.swift */; };
 		C9449E042AD68A35003F72CF /* RecordSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449E032AD68A35003F72CF /* RecordSectionView.swift */; };
-		C9449E072AD8FFCE003F72CF /* RouteRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449E062AD8FFCE003F72CF /* RouteRegisterViewModel.swift */; };
-		C9449E092AD8FFDD003F72CF /* RouteRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449E082AD8FFDD003F72CF /* RouteRegisterViewController.swift */; };
+		C9449E072AD8FFCE003F72CF /* RouteFollowingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449E062AD8FFCE003F72CF /* RouteFollowingViewModel.swift */; };
+		C9449E092AD8FFDD003F72CF /* RouteFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449E082AD8FFDD003F72CF /* RouteFollowingViewController.swift */; };
 		C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947D9292AC3F50E00015407 /* AppDelegate.swift */; };
 		C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C947D9322AC3F50E00015407 /* runnerpia.xcdatamodeld */; };
 		C947D9362AC3F51000015407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C947D9352AC3F51000015407 /* Assets.xcassets */; };
@@ -112,7 +112,7 @@
 		C941F5052AD5275100F43668 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C941F5072AD5284200F43668 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		C941F50B2AD529B300F43668 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		C941F50F2AD52AF300F43668 /* RouteFollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFollowingViewController.swift; sourceTree = "<group>"; };
+		C941F50F2AD52AF300F43668 /* RouteRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRegisterViewController.swift; sourceTree = "<group>"; };
 		C941F5142AD52B3900F43668 /* RouteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailViewController.swift; sourceTree = "<group>"; };
 		C941F5162AD52CF500F43668 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C941F5182AD532AE00F43668 /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
@@ -130,17 +130,17 @@
 		C941F52D2AD53DDA00F43668 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		C941F52E2AD6173E00F43668 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		C941F5302AD61A2200F43668 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
-		C9449D652AD64937003F72CF /* RouteFollowingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFollowingCoordinator.swift; sourceTree = "<group>"; };
+		C9449D652AD64937003F72CF /* RouteRegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRegisterCoordinator.swift; sourceTree = "<group>"; };
 		C9449D672AD64997003F72CF /* MyPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCoordinator.swift; sourceTree = "<group>"; };
 		C9449D692AD65C73003F72CF /* Home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Home.gpx; sourceTree = "<group>"; };
-		C9449D6B2AD65ED5003F72CF /* RouteFollowingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFollowingViewModel.swift; sourceTree = "<group>"; };
+		C9449D6B2AD65ED5003F72CF /* RouteRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRegisterViewModel.swift; sourceTree = "<group>"; };
 		C9449D6D2AD66295003F72CF /* RouteRunningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRunningViewModel.swift; sourceTree = "<group>"; };
 		C9449D6F2AD664F7003F72CF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C9449D742AD666A9003F72CF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C9449D782AD66944003F72CF /* CoreLocation+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreLocation+Rx.swift"; sourceTree = "<group>"; };
 		C9449E032AD68A35003F72CF /* RecordSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSectionView.swift; sourceTree = "<group>"; };
-		C9449E062AD8FFCE003F72CF /* RouteRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRegisterViewModel.swift; sourceTree = "<group>"; };
-		C9449E082AD8FFDD003F72CF /* RouteRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRegisterViewController.swift; sourceTree = "<group>"; };
+		C9449E062AD8FFCE003F72CF /* RouteFollowingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFollowingViewModel.swift; sourceTree = "<group>"; };
+		C9449E082AD8FFDD003F72CF /* RouteFollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFollowingViewController.swift; sourceTree = "<group>"; };
 		C947D9262AC3F50E00015407 /* runnerpia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runnerpia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C947D9292AC3F50E00015407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C947D9332AC3F50E00015407 /* runnerpia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = runnerpia.xcdatamodel; sourceTree = "<group>"; };
@@ -269,8 +269,8 @@
 				C941F5092AD5291800F43668 /* Main */,
 				C941F50A2AD5298000F43668 /* Home */,
 				88E172732AD5868000A4A852 /* RouteRunning */,
-				C941F50E2AD52AE200F43668 /* RouteFollowing */,
-				C9449E052AD8FFBC003F72CF /* RouteRegister */,
+				C941F50E2AD52AE200F43668 /* RouteRegister */,
+				C9449E052AD8FFBC003F72CF /* RouteFollowing */,
 				C941F5132AD52B2200F43668 /* RouteDetail */,
 				88E172522AD5541400A4A852 /* My Page */,
 			);
@@ -370,14 +370,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		C941F50E2AD52AE200F43668 /* RouteFollowing */ = {
+		C941F50E2AD52AE200F43668 /* RouteRegister */ = {
 			isa = PBXGroup;
 			children = (
-				C9449D652AD64937003F72CF /* RouteFollowingCoordinator.swift */,
-				C9449D6B2AD65ED5003F72CF /* RouteFollowingViewModel.swift */,
-				C941F50F2AD52AF300F43668 /* RouteFollowingViewController.swift */,
+				C9449D652AD64937003F72CF /* RouteRegisterCoordinator.swift */,
+				C9449D6B2AD65ED5003F72CF /* RouteRegisterViewModel.swift */,
+				C941F50F2AD52AF300F43668 /* RouteRegisterViewController.swift */,
 			);
-			path = RouteFollowing;
+			path = RouteRegister;
 			sourceTree = "<group>";
 		};
 		C941F5132AD52B2200F43668 /* RouteDetail */ = {
@@ -452,14 +452,14 @@
 			path = RouteRunningSubviews;
 			sourceTree = "<group>";
 		};
-		C9449E052AD8FFBC003F72CF /* RouteRegister */ = {
+		C9449E052AD8FFBC003F72CF /* RouteFollowing */ = {
 			isa = PBXGroup;
 			children = (
 				C985BD202ADE4E3500B7F983 /* Cell */,
-				C9449E062AD8FFCE003F72CF /* RouteRegisterViewModel.swift */,
-				C9449E082AD8FFDD003F72CF /* RouteRegisterViewController.swift */,
+				C9449E062AD8FFCE003F72CF /* RouteFollowingViewModel.swift */,
+				C9449E082AD8FFDD003F72CF /* RouteFollowingViewController.swift */,
 			);
-			path = RouteRegister;
+			path = RouteFollowing;
 			sourceTree = "<group>";
 		};
 		C947D91D2AC3F50E00015407 = {
@@ -814,7 +814,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9449D6C2AD65ED5003F72CF /* RouteFollowingViewModel.swift in Sources */,
+				C9449D6C2AD65ED5003F72CF /* RouteRegisterViewModel.swift in Sources */,
 				C9449E042AD68A35003F72CF /* RecordSectionView.swift in Sources */,
 				C941F5172AD52CF500F43668 /* AppCoordinator.swift in Sources */,
 				C985BD182ADE49FD00B7F983 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
@@ -822,13 +822,13 @@
 				C985BD1D2ADE4AA500B7F983 /* RecommendedTagCell.swift in Sources */,
 				C9449D792AD66944003F72CF /* CoreLocation+Rx.swift in Sources */,
 				C9449D752AD666A9003F72CF /* LocationManager.swift in Sources */,
-				C9449D662AD64937003F72CF /* RouteFollowingCoordinator.swift in Sources */,
-				C941F5102AD52AF300F43668 /* RouteFollowingViewController.swift in Sources */,
+				C9449D662AD64937003F72CF /* RouteRegisterCoordinator.swift in Sources */,
+				C941F5102AD52AF300F43668 /* RouteRegisterViewController.swift in Sources */,
 				C941F5312AD61A2200F43668 /* TabBarCoordinator.swift in Sources */,
 				C941F5192AD532AE00F43668 /* ImageLiteral.swift in Sources */,
 				88E1726B2AD5624D00A4A852 /* SafeTagContentsView.swift in Sources */,
-				C9449E072AD8FFCE003F72CF /* RouteRegisterViewModel.swift in Sources */,
-				C9449E092AD8FFDD003F72CF /* RouteRegisterViewController.swift in Sources */,
+				C9449E072AD8FFCE003F72CF /* RouteFollowingViewModel.swift in Sources */,
+				C9449E092AD8FFDD003F72CF /* RouteFollowingViewController.swift in Sources */,
 				C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */,
 				C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */,
 				C941F50C2AD529B300F43668 /* HomeViewController.swift in Sources */,

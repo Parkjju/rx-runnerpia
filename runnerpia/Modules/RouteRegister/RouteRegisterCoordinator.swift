@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RouteFollowingCoordinator: Coordinator {
+class RouteRegisterCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator] = []
     
@@ -18,7 +18,7 @@ class RouteFollowingCoordinator: Coordinator {
     }
     
     func start() {
-        let followRouteVC = RouteFollowingViewController()
+        let followRouteVC = RouteRegisterViewController()
         navigationController.pushViewController(followRouteVC, animated: true)
     }
 }

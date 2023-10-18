@@ -38,7 +38,7 @@ class HomeCoordinator: Coordinator, HomeFlow {
         case .routeRunning:
             navigationController.pushViewController(RouteRunningViewController(viewModel: RouteRunningViewModel(), homeFlow: self), animated: true)
         case .runningComplete:
-            navigationController.pushViewController(RouteRegisterViewController(viewModel: RouteRegisterViewModel(), homeFlow: self), animated: true)
+            navigationController.pushViewController(RouteFollowingViewController(viewModel: RouteFollowingViewModel(), homeFlow: self), animated: true)
         case .runningRegister:
             navigationController.pushViewController(UIViewController(), animated: true)
         }
