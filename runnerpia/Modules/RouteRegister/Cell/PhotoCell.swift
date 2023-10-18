@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class PhotoCell: BaseCollectionViewCell {
     
@@ -28,8 +30,22 @@ class PhotoCell: BaseCollectionViewCell {
     static let identifier = "PhotoCell"
     
     // MARK: - Functions
-    func bind(to viewModel: PhotoCellViewModel) {
+    func bind(to viewModel: PhotoCellViewModel, removeButtonTapped: PublishSubject<Int>, indexPath: Int) {
         viewModel.photoCell.bind(to: imageView.rx.image)
+            .disposed(by: disposeBag)
+        
+        viewModel.isFirstCell.map { !$0 }
+            .bind(to: addImageView.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        viewModel.isFirstCell.bind(to: removeButton.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        removeButton.rx.tap
+            .asDriver()
+            .drive(onNext: {
+                removeButtonTapped.onNext(indexPath)
+            })
             .disposed(by: disposeBag)
     }
     
@@ -54,6 +70,8 @@ class PhotoCell: BaseCollectionViewCell {
     override func configUI() {
         backgroundColor = .grey100
         layer.cornerRadius = 10
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.grey100.cgColor
         clipsToBounds = true
     }
 }
