@@ -41,6 +41,7 @@ class RouteRegisterViewModel: ViewModelType {
         let presentPickerView: Driver<Void>
         let attributedText: Observable<NSAttributedString>
         let textCount: Observable<String>
+        let isEnabled: Driver<Bool>
     }
     
     func transform(input: Input) -> Output {
@@ -52,6 +53,7 @@ class RouteRegisterViewModel: ViewModelType {
         let recommendedTagSelectedCount = BehaviorRelay<Int>(value: 0)
         let attributedText = BehaviorRelay<NSAttributedString>(value: NSAttributedString(string: ""))
         let textCountLabel = BehaviorRelay<String>(value: "")
+        let isEnabled = BehaviorRelay<Bool>(value: false)
         
         /// 안심태그 셀렉션
         input.secureTagSelected
@@ -70,11 +72,10 @@ class RouteRegisterViewModel: ViewModelType {
         input.recommendedTagSelected
             .subscribe(onNext: {
                 $0.isSelected.accept(!$0.isSelected.value)
-                
                 if $0.isSelected.value {
-                    recommendedTagSelectedCount.accept(secureTagSelectedCount.value + 1)
+                    recommendedTagSelectedCount.accept(recommendedTagSelectedCount.value + 1)
                 } else {
-                    recommendedTagSelectedCount.accept(secureTagSelectedCount.value - 1)
+                    recommendedTagSelectedCount.accept(recommendedTagSelectedCount.value - 1)
                 }
             })
             .disposed(by: disposeBag)
@@ -156,6 +157,20 @@ class RouteRegisterViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
+        /// 버튼 활성화 관련
+        Observable.combineLatest(attributedText, secureTagSelectedCount, recommendedTagSelectedCount)
+            .flatMapLatest { (attributedText, secureTagCount, recommendedTagCount) -> Observable<Bool> in
+                if attributedText.string.count >= 30 && secureTagCount >= 2 && recommendedTagCount >= 2 {
+                    return Observable.just(true)
+                } else {
+                    return Observable.just(false)
+                }
+            }
+            .subscribe(onNext: {
+                isEnabled.accept($0)
+            })
+            .disposed(by: disposeBag)
+        
         secureTagItems.accept(SecureTags.retrieveAllSecureTagsWithArray()
             .map {
                 SecureTagCellViewModel(with: $0)
@@ -168,6 +183,6 @@ class RouteRegisterViewModel: ViewModelType {
         
         
         
-        return Output(secureTagCellItems: secureTagItems.asDriver(), recommendedTagCellItems: recommendedTagItems.asDriver(), photoCellItems: photoItems.asDriver(), presentPickerView: presentPickerView.asDriver(onErrorJustReturn: ()), attributedText: attributedText.asObservable(), textCount: textCountLabel.asObservable())
+        return Output(secureTagCellItems: secureTagItems.asDriver(), recommendedTagCellItems: recommendedTagItems.asDriver(), photoCellItems: photoItems.asDriver(), presentPickerView: presentPickerView.asDriver(onErrorJustReturn: ()), attributedText: attributedText.asObservable(), textCount: textCountLabel.asObservable(), isEnabled: isEnabled.asDriver())
     }
 }
