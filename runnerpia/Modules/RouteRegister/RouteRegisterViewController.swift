@@ -238,6 +238,17 @@ class RouteRegisterViewController: BaseViewController {
         return cv
     }()
     
+    let registerButton = UIButton(type: .system)
+        .then {
+            $0.setTitleColor(.white, for: .disabled)
+            $0.setTitleColor(.white, for: .normal)
+            $0.clipsToBounds = true
+            $0.layer.cornerRadius = 20
+            $0.titleLabel?.font = .pretendard(.semibold, ofSize: 18)
+            $0.backgroundColor = .blue400
+            $0.setTitle("작성 완료", for: .normal)
+        }
+    
     
     // MARK: - Properties
     var viewModel: RouteRegisterViewModel
@@ -269,7 +280,7 @@ class RouteRegisterViewController: BaseViewController {
     override func render() {
         view.addSubView(scrollView)
         
-        scrollView.subviews.first!.addSubViews([mapView, completeLabel, locationView, dateView, timeView, distanceView, divider, tagLabel, secureTagLabel, secureTagCollectionView, recommendedTagLabel, recommendedTagCollectionView, dividerUnderTags, reviewLabel, reviewTextView, reviewTextCountLabel, photoTextLabel, photoCollectionView])
+        scrollView.subviews.first!.addSubViews([mapView, completeLabel, locationView, dateView, timeView, distanceView, divider, tagLabel, secureTagLabel, secureTagCollectionView, recommendedTagLabel, recommendedTagCollectionView, dividerUnderTags, reviewLabel, reviewTextView, reviewTextCountLabel, photoTextLabel, photoCollectionView, registerButton])
         
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -377,7 +388,13 @@ class RouteRegisterViewController: BaseViewController {
         photoCollectionView.snp.makeConstraints { make in
             make.top.equalTo(photoTextLabel.snp.bottom).offset(12)
             make.leading.trailing.equalTo(mapView)
-            make.height.equalTo(120)
+            make.height.equalTo(80)
+        }
+        
+        registerButton.snp.makeConstraints { make in
+            make.top.equalTo(photoCollectionView.snp.bottom).offset(50)
+            make.leading.trailing.equalTo(mapView)
+            make.height.equalTo(54)
             make.bottom.equalTo(scrollView.snp.bottom).offset(-20)
         }
     }
@@ -433,6 +450,18 @@ class RouteRegisterViewController: BaseViewController {
         
         output.textCount
             .bind(to: reviewTextCountLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.isEnabled
+            .drive(onNext: { [unowned self] in
+                if $0 {
+                    self.registerButton.isEnabled = true
+                    self.registerButton.backgroundColor = .blue400
+                } else {
+                    self.registerButton.isEnabled = false
+                    self.registerButton.backgroundColor = .grey300
+                }
+            })
             .disposed(by: disposeBag)
         
         secureTagCollectionView.updateCollectionViewHeight()
