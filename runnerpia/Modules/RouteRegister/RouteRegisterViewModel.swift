@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// 신 경로 등록 뷰모델
 class RouteRegisterViewModel: ViewModelType {
     
     struct Input {
