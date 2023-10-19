@@ -11,6 +11,7 @@ import RxCocoa
 import RxSwift
 import PhotosUI
 
+/// 경로 따라가기 뷰
 class RouteFollowingViewController: BaseViewController {
     
     // MARK: - Subviews
@@ -58,93 +59,7 @@ class RouteFollowingViewController: BaseViewController {
             $0.attributedText = runningTitleText
         }
     
-    let locationView: UIStackView = UIStackView()
-        .then { sv in
-            let firstMarkerImage = UIImageView(image: ImageLiteral.imgLocationFilled)
-            let secondMarkerImage = UIImageView(image: ImageLiteral.imgLocationFilled)
-
-            let startLocationLabel = UILabel()
-            startLocationLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
-            startLocationLabel.text = "성동구 송정동"
-
-            let rightArrowImage = UIImageView(image: UIImage(systemName: "arrow.right")?.withTintColor(.black, renderingMode: .alwaysOriginal))
-
-            let endLocationLabel = UILabel()
-            endLocationLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
-            endLocationLabel.text = "성동구 송정동"
-
-            [firstMarkerImage, startLocationLabel, rightArrowImage, secondMarkerImage,endLocationLabel].forEach { sv.addArrangedSubview($0) }
-
-            sv.spacing = 8
-            sv.distribution = .fillProportionally
-            sv.alignment = .fill
-        }
-    
-    let dateView = UIView()
-        .then { view in
-            let calendarImage = UIImageView(image: ImageLiteral.imgCalendarLine)
-            
-            // MARK: 데이터 전달받고 dateFormatting 후 문자열 추가
-            let date = UILabel()
-            date.text = "12월 31일 토요일 오후 7시 30분 시작"
-            date.font = UIFont.systemFont(ofSize: 14, weight: .light)
-            
-            [calendarImage, date].forEach { view.addSubview($0) }
-
-            calendarImage.snp.makeConstraints {
-                $0.leading.equalTo(view.snp.leading)
-                $0.centerY.equalTo(view.snp.centerY)
-                $0.width.equalTo(20)
-            }
-            
-            date.snp.makeConstraints {
-                $0.centerY.equalTo(view.snp.centerY)
-                $0.leading.equalTo(calendarImage.snp.trailing).offset(8)
-            }
-        }
-    
-    let timeView: UIView = UIView()
-        .then { view in
-            let clockImage = UIImageView(image: ImageLiteral.imgTimeLine)
-
-            let timeLabel = UILabel()
-            timeLabel.text = "34분 21초"
-            timeLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
-
-            [clockImage, timeLabel].forEach { view.addSubview($0) }
-
-            clockImage.snp.makeConstraints {
-                $0.centerY.equalTo(view.snp.centerY)
-                $0.leading.equalTo(view.snp.leading)
-                $0.width.equalTo(20)
-            }
-
-            timeLabel.snp.makeConstraints {
-                $0.centerY.equalTo(view.snp.centerY)
-                $0.leading.equalTo(clockImage.snp.trailing).offset(8)
-            }
-        }
-    
-    let distanceView: UIView = UIView()
-        .then { view in
-            let mapImage = UIImageView(image: ImageLiteral.imgRouteLine)
-
-            let distanceLabel = UILabel()
-            distanceLabel.text = "5.8km"
-            distanceLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
-
-            [mapImage, distanceLabel].forEach { view.addSubview($0) }
-
-            mapImage.snp.makeConstraints {
-                $0.centerY.equalTo(view.snp.centerY)
-                $0.leading.equalTo(view.snp.leading)
-            }
-
-            distanceLabel.snp.makeConstraints {
-                $0.leading.equalTo(mapImage.snp.trailing).offset(8)
-                $0.centerY.equalTo(view.snp.centerY)
-            }
-        }
+    let routeInformationView = RouteInformation()
     
     let divider = UIImageView(image: ImageLiteral.imgDivider)
     
@@ -154,31 +69,13 @@ class RouteFollowingViewController: BaseViewController {
             $0.text = "다녀오신 경로를 평가해주세요!"
         }
     
-    let secureTagLabel = UILabel()
-        .then {
-            $0.font = .pretendard(.medium, ofSize: 16)
-            $0.text = "안심태그"
-        }
+    let secureTagSelection = SecureTagSelection()
     
     let recommendedTagLabel = UILabel()
         .then {
             $0.text = "일반태그"
             $0.font = .pretendard(.medium, ofSize: 16)
         }
-    
-    let secureTagCollectionView: UICollectionView = {
-        let layout = LeftAlignedCollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = 10
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.register(SecureTagCell.self, forCellWithReuseIdentifier: SecureTagCell.identifier)
-        
-        return cv
-    }()
     
     let recommendedTagCollectionView: UICollectionView = {
         let layout = LeftAlignedCollectionViewFlowLayout()
@@ -280,7 +177,7 @@ class RouteFollowingViewController: BaseViewController {
     override func render() {
         view.addSubView(scrollView)
         
-        scrollView.subviews.first!.addSubViews([mapView, completeLabel, locationView, dateView, timeView, distanceView, divider, tagLabel, secureTagLabel, secureTagCollectionView, recommendedTagLabel, recommendedTagCollectionView, dividerUnderTags, reviewLabel, reviewTextView, reviewTextCountLabel, photoTextLabel, photoCollectionView, registerButton])
+        scrollView.subviews.first!.addSubViews([mapView, completeLabel, routeInformationView, divider, tagLabel, secureTagSelection, recommendedTagLabel, recommendedTagCollectionView, dividerUnderTags, reviewLabel, reviewTextView, reviewTextCountLabel, photoTextLabel, photoCollectionView, registerButton])
         
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -301,31 +198,14 @@ class RouteFollowingViewController: BaseViewController {
             make.leading.equalTo(mapView.snp.leading)
         }
         
-        locationView.snp.makeConstraints { make in
+        routeInformationView.snp.makeConstraints { make in
             make.top.equalTo(completeLabel.snp.bottom).offset(16)
-            make.leading.equalTo(mapView.snp.leading)
-        }
-        
-        dateView.snp.makeConstraints { make in
-            make.top.equalTo(locationView.snp.bottom).offset(16)
-            make.leading.equalTo(mapView)
-            make.height.equalTo(20)
-        }
-        
-        timeView.snp.makeConstraints { make in
-            make.top.equalTo(dateView.snp.bottom).offset(10)
-            make.leading.equalTo(mapView)
-            make.height.equalTo(20)
-        }
-        
-        distanceView.snp.makeConstraints { make in
-            make.top.equalTo(timeView.snp.bottom).offset(10)
-            make.leading.equalTo(mapView)
-            make.height.equalTo(20)
+            make.leading.trailing.equalTo(mapView)
+            make.height.equalTo(116)
         }
         
         divider.snp.makeConstraints { make in
-            make.top.equalTo(distanceView.snp.bottom).offset(20)
+            make.top.equalTo(routeInformationView.snp.bottom).offset(20)
             make.leading.equalTo(mapView)
             make.trailing.equalTo(mapView)
         }
@@ -335,21 +215,15 @@ class RouteFollowingViewController: BaseViewController {
             make.leading.equalTo(mapView)
         }
         
-        secureTagLabel.snp.makeConstraints { make in
+        secureTagSelection.snp.makeConstraints { make in
             make.top.equalTo(tagLabel.snp.bottom).offset(16)
-            make.leading.equalTo(mapView)
-        }
-        
-        secureTagCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(secureTagLabel.snp.bottom).offset(10)
-            make.leading.equalTo(mapView.snp.leading)
-            make.trailing.equalTo(mapView.snp.trailing)
-            make.height.equalTo(60)
+            make.leading.trailing.equalTo(mapView)
+            make.height.equalTo(140)
         }
         
         recommendedTagLabel.snp.makeConstraints { make in
             make.leading.equalTo(mapView)
-            make.top.equalTo(secureTagCollectionView.snp.bottom).offset(20)
+            make.top.equalTo(secureTagSelection.snp.bottom).offset(20)
         }
         
         recommendedTagCollectionView.snp.makeConstraints { make in
@@ -394,7 +268,7 @@ class RouteFollowingViewController: BaseViewController {
         registerButton.snp.makeConstraints { make in
             make.top.equalTo(photoCollectionView.snp.bottom).offset(50)
             make.leading.trailing.equalTo(mapView)
-            make.height.equalTo(54)
+            make.height.equalTo(54) // MARK: Button Height -> 54
             make.bottom.equalTo(scrollView.snp.bottom).offset(-20)
         }
     }
@@ -414,12 +288,12 @@ class RouteFollowingViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        let input = RouteFollowingViewModel.Input(secureTagSelected: secureTagCollectionView.rx.modelSelected(SecureTagCellViewModel.self).asObservable(), recommendedTagSelected: recommendedTagCollectionView.rx.modelSelected(RecommendedTagCellViewModel.self).asObservable(), photoCellSelected: photoCollectionView.rx.modelSelected(PhotoCellViewModel.self).asObservable(), selectedImages: imagePickerObservable.asObservable(), removeTargetItem: removeButtonTapTrigger.asObservable(), textViewDidBeginEditing: reviewTextView.rx.didBeginEditing.asObservable(), textViewDidEndEditing: reviewTextView.rx.didEndEditing.asObservable(), inputText: reviewTextView.rx.text)
+        let input = RouteFollowingViewModel.Input(secureTagSelected: secureTagSelection.secureTagCollectionView.rx.modelSelected(SecureTagCellViewModel.self).asObservable(), recommendedTagSelected: recommendedTagCollectionView.rx.modelSelected(RecommendedTagCellViewModel.self).asObservable(), photoCellSelected: photoCollectionView.rx.modelSelected(PhotoCellViewModel.self).asObservable(), selectedImages: imagePickerObservable.asObservable(), removeTargetItem: removeButtonTapTrigger.asObservable(), textViewDidBeginEditing: reviewTextView.rx.didBeginEditing.asObservable(), textViewDidEndEditing: reviewTextView.rx.didEndEditing.asObservable(), inputText: reviewTextView.rx.text)
         
         let output = viewModel.transform(input: input)
         
         output.secureTagCellItems
-            .drive(secureTagCollectionView.rx.items(cellIdentifier: SecureTagCell.identifier, cellType: SecureTagCell.self)) { _, viewModel, cell in
+            .drive(secureTagSelection.secureTagCollectionView.rx.items(cellIdentifier: SecureTagCell.identifier, cellType: SecureTagCell.self)) { _, viewModel, cell in
                 cell.bind(to: viewModel)
             }
             .disposed(by: disposeBag)
@@ -464,7 +338,7 @@ class RouteFollowingViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        secureTagCollectionView.updateCollectionViewHeight()
+        secureTagSelection.secureTagCollectionView.updateCollectionViewHeight()
         recommendedTagCollectionView.updateCollectionViewHeight()
     }
     
