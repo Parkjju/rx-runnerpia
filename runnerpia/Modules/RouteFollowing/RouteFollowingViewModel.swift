@@ -9,6 +9,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 
+/// 경로 따라가기 뷰모델
 class RouteFollowingViewModel: ViewModelType {
     
     var disposeBag = DisposeBag()
