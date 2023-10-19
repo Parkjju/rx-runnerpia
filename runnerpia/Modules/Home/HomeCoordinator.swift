@@ -9,8 +9,9 @@ import UIKit
 
 enum HomeFlowScenes {
     case routeRunning
-    case runningComplete
-    case runningRegister
+    case registerNewRoute
+    case registerSubRoute
+    case inputPathInfo
 }
 
 protocol HomeFlow {
@@ -37,10 +38,12 @@ class HomeCoordinator: Coordinator, HomeFlow {
         switch scene {
         case .routeRunning:
             navigationController.pushViewController(RouteRunningViewController(viewModel: RouteRunningViewModel(), homeFlow: self), animated: true)
-        case .runningComplete:
+        case .registerSubRoute:
             navigationController.pushViewController(RouteFollowingViewController(viewModel: RouteFollowingViewModel(), homeFlow: self), animated: true)
-        case .runningRegister:
-            navigationController.pushViewController(UIViewController(), animated: true)
+        case .registerNewRoute:
+            navigationController.pushViewController(RoutePreviewViewController(viewModel: RouteRegisterViewModel(), homeFlow: self), animated: true)
+        case .inputPathInfo:
+            navigationController.pushViewController(RouteRegisterViewController(viewModel: RouteRegisterViewModel(), homeFlow: self), animated: true)
         }
     }
     
