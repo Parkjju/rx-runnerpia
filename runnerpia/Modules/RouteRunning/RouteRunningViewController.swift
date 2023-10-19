@@ -19,6 +19,7 @@ class RouteRunningViewController: BaseViewController {
     
     // MARK: - Properties
     var viewModel: RouteRunningViewModel
+    var isFollowingRoute = false /// 경로 따라가기인지 경로 생성인지 분기처리
     let marker = NMFMarker()
     let viewDidLoadTrigger = PublishSubject<Void>()
     let pathOverlay = NMFPath()
@@ -138,7 +139,13 @@ class RouteRunningViewController: BaseViewController {
                 if $0 {
                     let alert = UIAlertController(title: "경로 기록을 종료할까요?", message: nil, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "확인", style: .default, handler: { _ in
-                        self.homeFlow.push(scene: .runningComplete)
+                        if self.isFollowingRoute {
+                            self.homeFlow.push(scene: .registerNewRoute)
+//                            self.homeFlow.push(scene: .registerSubRoute)
+                        } else {
+                            self.homeFlow.push(scene: .registerNewRoute)
+                        }
+                        
                     })
                     let cancelAction = UIAlertAction(title: "취소", style: .cancel)
                     alert.addAction(okAction)
