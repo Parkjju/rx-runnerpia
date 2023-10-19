@@ -11,6 +11,10 @@
 		80011223131CC44C9C14B163 /* Pods_runnerpia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B40E138F0AA14A595167125E /* Pods_runnerpia.framework */; };
 		884B629A2ADEE007007C91D2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884B62992ADEE007007C91D2 /* PhotoCell.swift */; };
 		884B629C2ADEE0DC007C91D2 /* PhotoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884B629B2ADEE0DC007C91D2 /* PhotoCellViewModel.swift */; };
+		884B629E2AE021EB007C91D2 /* RoutePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884B629D2AE021EB007C91D2 /* RoutePreviewViewController.swift */; };
+		884B62A22AE02566007C91D2 /* RouteInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884B62A12AE02566007C91D2 /* RouteInformation.swift */; };
+		884B62A52AE0BBF6007C91D2 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884B62A42AE0BBF6007C91D2 /* UITextField+.swift */; };
+		884B62A82AE0C190007C91D2 /* SecureTagSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884B62A72AE0C190007C91D2 /* SecureTagSelection.swift */; };
 		88E172512AD3A8FD00A4A852 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E172502AD3A8FD00A4A852 /* TabBarController.swift */; };
 		88E172542AD5542800A4A852 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E172532AD5542800A4A852 /* MyPageViewController.swift */; };
 		88E172582AD5588F00A4A852 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C941F52A2AD53DDA00F43668 /* Pretendard-Black.otf */; };
@@ -43,7 +47,6 @@
 		C941F5232AD53D8100F43668 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5222AD53D8100F43668 /* UIFont+.swift */; };
 		C941F52F2AD6173E00F43668 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F52E2AD6173E00F43668 /* HomeCoordinator.swift */; };
 		C941F5312AD61A2200F43668 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5302AD61A2200F43668 /* TabBarCoordinator.swift */; };
-		C9449D662AD64937003F72CF /* RouteRegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D652AD64937003F72CF /* RouteRegisterCoordinator.swift */; };
 		C9449D682AD64997003F72CF /* MyPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D672AD64997003F72CF /* MyPageCoordinator.swift */; };
 		C9449D6A2AD65C73003F72CF /* Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C9449D692AD65C73003F72CF /* Home.gpx */; };
 		C9449D6C2AD65ED5003F72CF /* RouteRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9449D6B2AD65ED5003F72CF /* RouteRegisterViewModel.swift */; };
@@ -95,6 +98,10 @@
 		6ADD387DFA681050DEF073C8 /* Pods-runnerpiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-runnerpiaTests.debug.xcconfig"; path = "Target Support Files/Pods-runnerpiaTests/Pods-runnerpiaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		884B62992ADEE007007C91D2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		884B629B2ADEE0DC007C91D2 /* PhotoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellViewModel.swift; sourceTree = "<group>"; };
+		884B629D2AE021EB007C91D2 /* RoutePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewViewController.swift; sourceTree = "<group>"; };
+		884B62A12AE02566007C91D2 /* RouteInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInformation.swift; sourceTree = "<group>"; };
+		884B62A42AE0BBF6007C91D2 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		884B62A72AE0C190007C91D2 /* SecureTagSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTagSelection.swift; sourceTree = "<group>"; };
 		88E172502AD3A8FD00A4A852 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		88E172532AD5542800A4A852 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		88E172642AD55D0900A4A852 /* RecommendContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendContentsView.swift; sourceTree = "<group>"; };
@@ -130,7 +137,6 @@
 		C941F52D2AD53DDA00F43668 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		C941F52E2AD6173E00F43668 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		C941F5302AD61A2200F43668 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
-		C9449D652AD64937003F72CF /* RouteRegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRegisterCoordinator.swift; sourceTree = "<group>"; };
 		C9449D672AD64997003F72CF /* MyPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCoordinator.swift; sourceTree = "<group>"; };
 		C9449D692AD65C73003F72CF /* Home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Home.gpx; sourceTree = "<group>"; };
 		C9449D6B2AD65ED5003F72CF /* RouteRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRegisterViewModel.swift; sourceTree = "<group>"; };
@@ -213,6 +219,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		884B629F2AE0253D007C91D2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				884B62A62AE0C167007C91D2 /* SecureTagSelection */,
+				884B62A02AE02546007C91D2 /* RouteInformation */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		884B62A02AE02546007C91D2 /* RouteInformation */ = {
+			isa = PBXGroup;
+			children = (
+				884B62A12AE02566007C91D2 /* RouteInformation.swift */,
+			);
+			path = RouteInformation;
+			sourceTree = "<group>";
+		};
+		884B62A32AE0BBE2007C91D2 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				884B62A42AE0BBF6007C91D2 /* UITextField+.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		884B62A62AE0C167007C91D2 /* SecureTagSelection */ = {
+			isa = PBXGroup;
+			children = (
+				884B62A72AE0C190007C91D2 /* SecureTagSelection.swift */,
+				C985BD1A2ADE4A9900B7F983 /* SecureTagCell.swift */,
+				C985BD212ADE4E4D00B7F983 /* SecureTagCellViewModel.swift */,
+			);
+			path = SecureTagSelection;
+			sourceTree = "<group>";
+		};
 		88E172442AD386F800A4A852 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +266,7 @@
 		88E172452AD3870100A4A852 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				884B629F2AE0253D007C91D2 /* Components */,
 				C9449D732AD6667E003F72CF /* LocationManager */,
 				88E172702AD5745200A4A852 /* Tags */,
 				C941F5042AD5274600F43668 /* Base */,
@@ -249,6 +291,7 @@
 				C941F51E2AD5392E00F43668 /* UIColor */,
 				C941F51D2AD5337400F43668 /* UIImage */,
 				C985BD152ADE49D700B7F983 /* UICollectionView */,
+				884B62A32AE0BBE2007C91D2 /* UITextField */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -373,7 +416,7 @@
 		C941F50E2AD52AE200F43668 /* RouteRegister */ = {
 			isa = PBXGroup;
 			children = (
-				C9449D652AD64937003F72CF /* RouteRegisterCoordinator.swift */,
+				884B629D2AE021EB007C91D2 /* RoutePreviewViewController.swift */,
 				C9449D6B2AD65ED5003F72CF /* RouteRegisterViewModel.swift */,
 				C941F50F2AD52AF300F43668 /* RouteRegisterViewController.swift */,
 			);
@@ -538,8 +581,6 @@
 		C985BD202ADE4E3500B7F983 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C985BD1A2ADE4A9900B7F983 /* SecureTagCell.swift */,
-				C985BD212ADE4E4D00B7F983 /* SecureTagCellViewModel.swift */,
 				C985BD1C2ADE4AA500B7F983 /* RecommendedTagCell.swift */,
 				C985BD232ADE4E5900B7F983 /* RecommendedTagCellViewModel.swift */,
 				884B62992ADEE007007C91D2 /* PhotoCell.swift */,
@@ -818,16 +859,18 @@
 				C9449E042AD68A35003F72CF /* RecordSectionView.swift in Sources */,
 				C941F5172AD52CF500F43668 /* AppCoordinator.swift in Sources */,
 				C985BD182ADE49FD00B7F983 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
+				884B62A82AE0C190007C91D2 /* SecureTagSelection.swift in Sources */,
 				C985BD222ADE4E4D00B7F983 /* SecureTagCellViewModel.swift in Sources */,
 				C985BD1D2ADE4AA500B7F983 /* RecommendedTagCell.swift in Sources */,
+				884B62A52AE0BBF6007C91D2 /* UITextField+.swift in Sources */,
 				C9449D792AD66944003F72CF /* CoreLocation+Rx.swift in Sources */,
 				C9449D752AD666A9003F72CF /* LocationManager.swift in Sources */,
-				C9449D662AD64937003F72CF /* RouteRegisterCoordinator.swift in Sources */,
 				C941F5102AD52AF300F43668 /* RouteRegisterViewController.swift in Sources */,
 				C941F5312AD61A2200F43668 /* TabBarCoordinator.swift in Sources */,
 				C941F5192AD532AE00F43668 /* ImageLiteral.swift in Sources */,
 				88E1726B2AD5624D00A4A852 /* SafeTagContentsView.swift in Sources */,
 				C9449E072AD8FFCE003F72CF /* RouteFollowingViewModel.swift in Sources */,
+				884B629E2AE021EB007C91D2 /* RoutePreviewViewController.swift in Sources */,
 				C9449E092AD8FFDD003F72CF /* RouteFollowingViewController.swift in Sources */,
 				C947D92A2AC3F50E00015407 /* AppDelegate.swift in Sources */,
 				C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */,
@@ -835,6 +878,7 @@
 				88FA2B9D2AD58DA900AE835B /* APIRouter.swift in Sources */,
 				C941F5082AD5284200F43668 /* BaseViewModel.swift in Sources */,
 				88E172722AD5745900A4A852 /* Tags.swift in Sources */,
+				884B62A22AE02566007C91D2 /* RouteInformation.swift in Sources */,
 				88E172752AD586A800A4A852 /* RouteRunningViewController.swift in Sources */,
 				88E172512AD3A8FD00A4A852 /* TabBarController.swift in Sources */,
 				C9449D702AD664F7003F72CF /* HomeViewModel.swift in Sources */,
