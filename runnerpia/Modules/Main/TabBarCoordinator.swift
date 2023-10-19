@@ -146,7 +146,7 @@ class TabBarCoordinator: NSObject, Coordinator {
            switch page {
            case .followRoute:
                // If needed: Each tab bar flow can have it's own Coordinator.
-               let registerVC = RouteRegisterViewController()
+               let registerVC = UIViewController()
                navController.pushViewController(registerVC, animated: true)
            case .home:
                let homeVC = HomeViewController(viewModel: HomeViewModel())
