@@ -133,13 +133,6 @@ class RouteFollowingViewController: BaseViewController {
     var viewModel: RouteFollowingViewModel
     var homeFlow: HomeFlow
     let initialText = "최소 30자 이상 작성해주세요. (비방, 욕설을 포함한 관련없는 내용은 통보 없이 삭제될 수 있습니다.)"
-    let paragraphStyle = NSMutableParagraphStyle()
-        .then {
-            $0.lineSpacing = 4
-        }
-    
-    lazy var initialProperty = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular, width: .standard), NSAttributedString.Key.foregroundColor: UIColor.init(hex: "#8B8B8B"), NSAttributedString.Key.paragraphStyle: self.paragraphStyle]
-    lazy var changedProperty = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular, width: .standard), NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.paragraphStyle: self.paragraphStyle]
     
     let imagePickerObservable = PublishSubject<UIImage>()
     let removeButtonTapTrigger = PublishSubject<Int>()
