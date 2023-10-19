@@ -182,8 +182,6 @@ class RouteFollowingViewModel: ViewModelType {
                 RecommendedTagCellViewModel(with: $0)
             })
         
-        
-        
         return Output(secureTagCellItems: secureTagItems.asDriver(), recommendedTagCellItems: recommendedTagItems.asDriver(), photoCellItems: photoItems.asDriver(), presentPickerView: presentPickerView.asDriver(onErrorJustReturn: ()), attributedText: attributedText.asObservable(), textCount: textCountLabel.asObservable(), isEnabled: isEnabled.asDriver())
     }
 }
