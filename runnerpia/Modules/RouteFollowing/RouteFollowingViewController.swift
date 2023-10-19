@@ -71,25 +71,7 @@ class RouteFollowingViewController: BaseViewController {
     
     let secureTagSelection = SecureTagSelection()
     
-    let recommendedTagLabel = UILabel()
-        .then {
-            $0.text = "일반태그"
-            $0.font = .pretendard(.medium, ofSize: 16)
-        }
-    
-    let recommendedTagCollectionView: UICollectionView = {
-        let layout = LeftAlignedCollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = 10
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.register(RecommendedTagCell.self, forCellWithReuseIdentifier: RecommendedTagCell.identifier)
-        
-        return cv
-    }()
+    let recommendedTagSelection = RecommendedTagSelection()
     
     let dividerUnderTags = UIImageView(image: ImageLiteral.imgDivider)
     
@@ -177,7 +159,7 @@ class RouteFollowingViewController: BaseViewController {
     override func render() {
         view.addSubView(scrollView)
         
-        scrollView.subviews.first!.addSubViews([mapView, completeLabel, routeInformationView, divider, tagLabel, secureTagSelection, recommendedTagLabel, recommendedTagCollectionView, dividerUnderTags, reviewLabel, reviewTextView, reviewTextCountLabel, photoTextLabel, photoCollectionView, registerButton])
+        scrollView.subviews.first!.addSubViews([mapView, completeLabel, routeInformationView, divider, tagLabel, secureTagSelection, recommendedTagSelection, dividerUnderTags, reviewLabel, reviewTextView, reviewTextCountLabel, photoTextLabel, photoCollectionView, registerButton])
         
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -221,20 +203,14 @@ class RouteFollowingViewController: BaseViewController {
             make.height.equalTo(140)
         }
         
-        recommendedTagLabel.snp.makeConstraints { make in
-            make.leading.equalTo(mapView)
+        recommendedTagSelection.snp.makeConstraints { make in
             make.top.equalTo(secureTagSelection.snp.bottom).offset(20)
-        }
-        
-        recommendedTagCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(recommendedTagLabel.snp.bottom).offset(10)
-            make.leading.equalTo(mapView.snp.leading)
-            make.trailing.equalTo(mapView.snp.trailing)
-            make.height.equalTo(60)
+            make.leading.trailing.equalTo(mapView)
+            make.height.equalTo(140)
         }
         
         dividerUnderTags.snp.makeConstraints { make in
-            make.top.equalTo(recommendedTagCollectionView.snp.bottom).offset(20)
+            make.top.equalTo(recommendedTagSelection.snp.bottom).offset(20)
             make.leading.equalTo(mapView)
         }
         
@@ -288,7 +264,7 @@ class RouteFollowingViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        let input = RouteFollowingViewModel.Input(secureTagSelected: secureTagSelection.secureTagCollectionView.rx.modelSelected(SecureTagCellViewModel.self).asObservable(), recommendedTagSelected: recommendedTagCollectionView.rx.modelSelected(RecommendedTagCellViewModel.self).asObservable(), photoCellSelected: photoCollectionView.rx.modelSelected(PhotoCellViewModel.self).asObservable(), selectedImages: imagePickerObservable.asObservable(), removeTargetItem: removeButtonTapTrigger.asObservable(), textViewDidBeginEditing: reviewTextView.rx.didBeginEditing.asObservable(), textViewDidEndEditing: reviewTextView.rx.didEndEditing.asObservable(), inputText: reviewTextView.rx.text)
+        let input = RouteFollowingViewModel.Input(secureTagSelected: secureTagSelection.secureTagCollectionView.rx.modelSelected(SecureTagCellViewModel.self).asObservable(), recommendedTagSelected: recommendedTagSelection.recommendedTagCollectionView.rx.modelSelected(RecommendedTagCellViewModel.self).asObservable(), photoCellSelected: photoCollectionView.rx.modelSelected(PhotoCellViewModel.self).asObservable(), selectedImages: imagePickerObservable.asObservable(), removeTargetItem: removeButtonTapTrigger.asObservable(), textViewDidBeginEditing: reviewTextView.rx.didBeginEditing.asObservable(), textViewDidEndEditing: reviewTextView.rx.didEndEditing.asObservable(), inputText: reviewTextView.rx.text)
         
         let output = viewModel.transform(input: input)
         
@@ -299,7 +275,7 @@ class RouteFollowingViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         output.recommendedTagCellItems
-            .drive(recommendedTagCollectionView.rx.items(cellIdentifier: RecommendedTagCell.identifier, cellType: RecommendedTagCell.self)) { _, viewModel, cell in
+            .drive(recommendedTagSelection.recommendedTagCollectionView.rx.items(cellIdentifier: RecommendedTagCell.identifier, cellType: RecommendedTagCell.self)) { _, viewModel, cell in
                 cell.bind(to: viewModel)
             }
             .disposed(by: disposeBag)
@@ -339,7 +315,7 @@ class RouteFollowingViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         secureTagSelection.secureTagCollectionView.updateCollectionViewHeight()
-        recommendedTagCollectionView.updateCollectionViewHeight()
+        recommendedTagSelection.recommendedTagCollectionView.updateCollectionViewHeight()
     }
     
     func setupImagePicker(){
