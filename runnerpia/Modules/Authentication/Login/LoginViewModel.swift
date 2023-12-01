@@ -6,11 +6,16 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
 class LoginViewModel: ViewModelType {
     
+    var apiSession: APIService = APISession()
+    var disposeBag = DisposeBag()
+    
     struct Input {
-        
+        let userId: Observable<String>
     }
     
     struct Output {
@@ -18,6 +23,7 @@ class LoginViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
+        
         return Output()
     }
 }
