@@ -33,4 +33,5 @@ enum ImageLiteral {
     static var imgClose: UIImage {.load(named: "imgClose")}
     static var imgDivider: UIImage {.load(named: "imgDivider")}
     static var imgPlus: UIImage {.load(named: "imgPlus")}
+    static var imgBackground: UIImage {.load(named: "imgBackground")}
 }
