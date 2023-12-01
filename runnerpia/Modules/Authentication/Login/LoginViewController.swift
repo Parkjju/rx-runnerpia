@@ -105,7 +105,19 @@ class LoginViewController: BaseViewController {
         }
     
     // MARK: - Properties
-    let userId = BehaviorRelay<String>(value: "")
+    var viewModel: LoginViewModel
+    let userId = BehaviorRelay<String?>(value: nil)
+    
+    // MARK: - Initialization
+    
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Functions
     override func render() {
@@ -161,6 +173,11 @@ class LoginViewController: BaseViewController {
     }
     
     override func configUI() {
+        appleLoginButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.handleAppleLogin()
+            })
+            .disposed(by: disposeBag)
     }
     
     func handleAppleLogin() {
@@ -175,11 +192,8 @@ class LoginViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        appleLoginButton.rx.tap
-            .subscribe(onNext: { [unowned self] in
-                self.handleAppleLogin()
-            })
-            .disposed(by: disposeBag)
+        let input = LoginViewModel.Input(userId: userId.asObservable())
+        let output = viewModel.transform(input: input)
     }
     
     func setButtonBorder() {
