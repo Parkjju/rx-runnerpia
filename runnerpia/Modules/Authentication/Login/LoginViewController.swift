@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AuthenticationServices
+import RxCocoa
 
 class LoginViewController: BaseViewController {
     
@@ -102,6 +104,9 @@ class LoginViewController: BaseViewController {
             $0.setTitle("위치정보 이용약관", for: .normal)
         }
     
+    // MARK: - Properties
+    let userId = BehaviorRelay<String>(value: "")
+    
     // MARK: - Functions
     override func render() {
         view.addSubViews([backgroundImageView, dimmingView, termsOfServiceButton, agreeLabel, privacyPolicyButton, locationTerms, kakaoLoginButton, appleLoginButton, mainLabel])
@@ -158,6 +163,25 @@ class LoginViewController: BaseViewController {
     override func configUI() {
     }
     
+    func handleAppleLogin() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+    
+    override func bindViewModel() {
+        appleLoginButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.handleAppleLogin()
+            })
+            .disposed(by: disposeBag)
+    }
+    
     func setButtonBorder() {
         let locationTermslineView = UIView(frame: CGRect(x: 0, y: locationTerms.intrinsicContentSize.height - 2, width: locationTerms.intrinsicContentSize.width, height: 1))
         locationTermslineView.backgroundColor = UIColor.init(hex: "#C8C8C8").withAlphaComponent(0.8)
@@ -170,5 +194,26 @@ class LoginViewController: BaseViewController {
         let termsOfServiceLineView = UIView(frame: CGRect(x: 0, y: termsOfServiceButton.intrinsicContentSize.height - 2, width: termsOfServiceButton.intrinsicContentSize.width, height: 1))
         termsOfServiceLineView.backgroundColor = UIColor.init(hex: "#C8C8C8").withAlphaComponent(0.8)
         termsOfServiceButton.addSubview(termsOfServiceLineView)
+    }
+}
+
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+            userId.accept(appleIDCredential.user)
+        case let passwordCredential as ASPasswordCredential:
+            print(passwordCredential)
+            // Sign in using an existing iCloud Keychain credential.
+            print("password credential .. ")
+        default:
+            break
+        }
+    }
+}
+
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
     }
 }
