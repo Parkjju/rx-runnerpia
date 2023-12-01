@@ -15,7 +15,7 @@ class LoginViewModel: ViewModelType {
     var disposeBag = DisposeBag()
     
     struct Input {
-        let userId: Observable<String>
+        let userId: Observable<String?>
     }
     
     struct Output {
@@ -23,6 +23,17 @@ class LoginViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
+        
+        /// 1. 유저 아이디값 세팅
+        input.userId
+            .compactMap { $0 }
+            .flatMapLatest { [unowned self] userId -> Observable<String> in
+                return self.apiSession.requestSingle(.login(userId: userId)).asObservable()
+            }
+            .subscribe(onNext: {
+                print("RESULT: \($0)")
+            })
+            .disposed(by: disposeBag)
         
         return Output()
     }
