@@ -5,7 +5,8 @@ target 'runnerpia' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for runnerpia
+  # Pods for runnerpia 
+  pod 'Alamofire'
   pod 'RxSwift', '6.6.0'
   pod 'RxCocoa', '6.6.0'
   pod 'Then'

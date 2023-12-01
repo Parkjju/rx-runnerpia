@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.8.0)
   - NMapsGeometry (1.0.1)
   - NMapsMap (3.17.0):
     - NMapsGeometry
@@ -16,6 +17,7 @@ PODS:
   - Then (3.0.0)
 
 DEPENDENCIES:
+  - Alamofire
   - NMapsMap
   - RxBlocking (= 6.6.0)
   - RxCocoa (= 6.6.0)
@@ -26,6 +28,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - NMapsGeometry
     - NMapsMap
     - RxBlocking
@@ -37,6 +40,7 @@ SPEC REPOS:
     - Then
 
 SPEC CHECKSUMS:
+  Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
   NMapsGeometry: 53c573ead66466681cf123f99f698dc8071a4b83
   NMapsMap: a5b909a31b6f3d27a670f6eb2ddc913c38975474
   RxBlocking: fbd1f8501443024f686e556f36dac79b0d5f4d7c
@@ -47,6 +51,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 44c99ea31dd259b99bcdc88dba561fbf3498332b
+PODFILE CHECKSUM: 97ff0b5f84e8ca6992773267fbccd1a6744b0850
 
 COCOAPODS: 1.12.1
