@@ -38,6 +38,13 @@
 		C91CE90A2B1A0E2500048FF7 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CE9092B1A0E2500048FF7 /* AuthenticationCoordinator.swift */; };
 		C91CE90D2B1A0E6600048FF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CE90C2B1A0E6600048FF7 /* LoginViewController.swift */; };
 		C91CE90F2B1A0E6D00048FF7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CE90E2B1A0E6D00048FF7 /* LoginViewModel.swift */; };
+		C91CE9162B1A316500048FF7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CE9152B1A316500048FF7 /* Constants.swift */; };
+		C91CE9182B1A329100048FF7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CE9172B1A329100048FF7 /* APIService.swift */; };
+		C91CE91A2B1A329A00048FF7 /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CE9192B1A329A00048FF7 /* APISession.swift */; };
+		C91CE91C2B1A32AA00048FF7 /* APIEventLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CE91B2B1A32AA00048FF7 /* APIEventLogger.swift */; };
+		C91CE91E2B1A32B500048FF7 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CE91D2B1A32B500048FF7 /* APIError.swift */; };
+		C91CE9202B1A32BF00048FF7 /* APIInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CE91F2B1A32BF00048FF7 /* APIInterceptor.swift */; };
+		C91CE9232B1A331700048FF7 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CE9222B1A331700048FF7 /* Data+.swift */; };
 		C941F5062AD5275100F43668 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5052AD5275100F43668 /* BaseViewController.swift */; };
 		C941F5082AD5284200F43668 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F5072AD5284200F43668 /* BaseViewModel.swift */; };
 		C941F50C2AD529B300F43668 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F50B2AD529B300F43668 /* HomeViewController.swift */; };
@@ -123,6 +130,14 @@
 		C91CE9092B1A0E2500048FF7 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		C91CE90C2B1A0E6600048FF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C91CE90E2B1A0E6D00048FF7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C91CE9132B1A2FCC00048FF7 /* runnerpia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = runnerpia.entitlements; sourceTree = "<group>"; };
+		C91CE9152B1A316500048FF7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C91CE9172B1A329100048FF7 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		C91CE9192B1A329A00048FF7 /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
+		C91CE91B2B1A32AA00048FF7 /* APIEventLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEventLogger.swift; sourceTree = "<group>"; };
+		C91CE91D2B1A32B500048FF7 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		C91CE91F2B1A32BF00048FF7 /* APIInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInterceptor.swift; sourceTree = "<group>"; };
+		C91CE9222B1A331700048FF7 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
 		C941F5052AD5275100F43668 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C941F5072AD5284200F43668 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		C941F50B2AD529B300F43668 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +290,7 @@
 		88E172452AD3870100A4A852 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C91CE9142B1A315000048FF7 /* Constants */,
 				884B629F2AE0253D007C91D2 /* Components */,
 				C9449D732AD6667E003F72CF /* LocationManager */,
 				88E172702AD5745200A4A852 /* Tags */,
@@ -294,6 +310,7 @@
 		88E172472AD390CC00A4A852 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C91CE9212B1A331000048FF7 /* Data */,
 				C9449D772AD66938003F72CF /* RxSwift */,
 				88E172662AD55E1700A4A852 /* UIView */,
 				C941F5212AD53D7300F43668 /* UIFont */,
@@ -334,6 +351,11 @@
 			isa = PBXGroup;
 			children = (
 				88FA2B9C2AD58DA900AE835B /* APIRouter.swift */,
+				C91CE9172B1A329100048FF7 /* APIService.swift */,
+				C91CE9192B1A329A00048FF7 /* APISession.swift */,
+				C91CE91B2B1A32AA00048FF7 /* APIEventLogger.swift */,
+				C91CE91D2B1A32B500048FF7 /* APIError.swift */,
+				C91CE91F2B1A32BF00048FF7 /* APIInterceptor.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -417,6 +439,22 @@
 			children = (
 			);
 			name = Register;
+			sourceTree = "<group>";
+		};
+		C91CE9142B1A315000048FF7 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C91CE9152B1A316500048FF7 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		C91CE9212B1A331000048FF7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C91CE9222B1A331700048FF7 /* Data+.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		C941F5042AD5274600F43668 /* Base */ = {
@@ -566,6 +604,7 @@
 		C947D9282AC3F50E00015407 /* runnerpia */ = {
 			isa = PBXGroup;
 			children = (
+				C91CE9132B1A2FCC00048FF7 /* runnerpia.entitlements */,
 				C9449D692AD65C73003F72CF /* Home.gpx */,
 				88E172442AD386F800A4A852 /* Application */,
 				88E172452AD3870100A4A852 /* Common */,
@@ -911,6 +950,7 @@
 				C9449D752AD666A9003F72CF /* LocationManager.swift in Sources */,
 				C941F5102AD52AF300F43668 /* RouteRegisterViewController.swift in Sources */,
 				C941F5312AD61A2200F43668 /* TabBarCoordinator.swift in Sources */,
+				C91CE9232B1A331700048FF7 /* Data+.swift in Sources */,
 				C941F5192AD532AE00F43668 /* ImageLiteral.swift in Sources */,
 				88E1726B2AD5624D00A4A852 /* SafeTagContentsView.swift in Sources */,
 				C91CE90D2B1A0E6600048FF7 /* LoginViewController.swift in Sources */,
@@ -921,6 +961,7 @@
 				C947D9342AC3F50E00015407 /* runnerpia.xcdatamodeld in Sources */,
 				C941F50C2AD529B300F43668 /* HomeViewController.swift in Sources */,
 				88FA2B9D2AD58DA900AE835B /* APIRouter.swift in Sources */,
+				C91CE9182B1A329100048FF7 /* APIService.swift in Sources */,
 				C941F5082AD5284200F43668 /* BaseViewModel.swift in Sources */,
 				88E172722AD5745900A4A852 /* Tags.swift in Sources */,
 				884B62A22AE02566007C91D2 /* RouteInformation.swift in Sources */,
@@ -934,19 +975,24 @@
 				C985BD272ADE5A4F00B7F983 /* UICollectionView+.swift in Sources */,
 				884B629C2ADEE0DC007C91D2 /* PhotoCellViewModel.swift in Sources */,
 				88E172652AD55D0900A4A852 /* RecommendContentsView.swift in Sources */,
+				C91CE9162B1A316500048FF7 /* Constants.swift in Sources */,
 				884B629A2ADEE007007C91D2 /* PhotoCell.swift in Sources */,
 				C9449D682AD64997003F72CF /* MyPageCoordinator.swift in Sources */,
 				88E1726F2AD5739900A4A852 /* FollowingRoute.swift in Sources */,
 				C91CE90F2B1A0E6D00048FF7 /* LoginViewModel.swift in Sources */,
 				C941F52F2AD6173E00F43668 /* HomeCoordinator.swift in Sources */,
 				C985BD1F2ADE4AF100B7F983 /* BaseCollectionViewCell.swift in Sources */,
+				C91CE91E2B1A32B500048FF7 /* APIError.swift in Sources */,
 				C941F51B2AD5334E00F43668 /* UIImage+.swift in Sources */,
 				C9449D6E2AD66295003F72CF /* RouteRunningViewModel.swift in Sources */,
+				C91CE91C2B1A32AA00048FF7 /* APIEventLogger.swift in Sources */,
 				88E172542AD5542800A4A852 /* MyPageViewController.swift in Sources */,
+				C91CE9202B1A32BF00048FF7 /* APIInterceptor.swift in Sources */,
 				C941F5232AD53D8100F43668 /* UIFont+.swift in Sources */,
 				C985BD242ADE4E5900B7F983 /* RecommendedTagCellViewModel.swift in Sources */,
 				C941F5202AD5393B00F43668 /* UIColor+.swift in Sources */,
 				C985BD1B2ADE4A9900B7F983 /* SecureTagCell.swift in Sources */,
+				C91CE91A2B1A329A00048FF7 /* APISession.swift in Sources */,
 				C941F5152AD52B3900F43668 /* RouteDetailViewController.swift in Sources */,
 				C941F5062AD5275100F43668 /* BaseViewController.swift in Sources */,
 			);
@@ -1118,6 +1164,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = runnerpia/runnerpia.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5JQS3FU5R6;
@@ -1149,6 +1196,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = runnerpia/runnerpia.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5JQS3FU5R6;
