@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = navigationController
         
         let coordinator = AppCoordinator(navigationController: navigationController)
-        navigationController.pushViewController(LoginViewController(), animated: true)
+        navigationController.pushViewController(LoginViewController(viewModel: LoginViewModel()), animated: true)
         coordinator.start()
 //        let tabbarCoordinator = TabBarCoordinator(navigationController: navigationController)
 //        coordinator.childCoordinators.append(tabbarCoordinator)
