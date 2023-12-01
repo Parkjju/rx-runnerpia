@@ -6,6 +6,7 @@ target 'runnerpia' do
   use_frameworks!
 
   # Pods for runnerpia 
+  pod 'RxKakaoSDK'
   pod 'Alamofire'
   pod 'RxSwift', '6.6.0'
   pod 'RxCocoa', '6.6.0'
