@@ -8,6 +8,8 @@
 import UIKit
 import AuthenticationServices
 import RxCocoa
+import KakaoSDKUser
+import RxKakaoSDKUser
 
 class LoginViewController: BaseViewController {
     
@@ -178,6 +180,12 @@ class LoginViewController: BaseViewController {
                 self.handleAppleLogin()
             })
             .disposed(by: disposeBag)
+        
+        kakaoLoginButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.handleKakaoLogin()
+            })
+            .disposed(by: disposeBag)
     }
     
     func handleAppleLogin() {
@@ -189,6 +197,29 @@ class LoginViewController: BaseViewController {
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
+    }
+    
+    func handleKakaoLogin() {
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.rx.loginWithKakaoTalk()
+                .subscribe(onNext:{ [unowned self] (oauthToken) in
+                    print("loginWithKakaoTalk() success.")
+                    //do something
+                    _ = oauthToken
+                    
+                    UserApi.shared.rx.me()
+                        .asObservable()
+                        .compactMap { $0.id }
+                        .subscribe(onNext: { [unowned self] in
+                            self.userId.accept("\($0)")
+                        })
+                        .disposed(by: self.disposeBag)
+                    
+                }, onError: {error in
+                    print(error)
+                })
+            .disposed(by: disposeBag)
+        }
     }
     
     override func bindViewModel() {
